@@ -32,7 +32,7 @@ theme-override: assets/css/PITCHME.css
 # Logo Setting
 # https://gitpitch.com/docs/settings/logo
 #
-logo : assets/img/1024-1024.png
+logo : assets/img/logo.png
 logo-position : top-left
 
 #
@@ -45,7 +45,7 @@ layout : center
 # Footnote Setting
 # Doc: https://gitpitch.com/docs/settings/footnote
 #
-footnote : "GitPitch - The Fastest Way From Idea To Presentation"
+footnote : "Minigram - Mitigram future frontend testing grounds"
 
 #
 # Published Setting

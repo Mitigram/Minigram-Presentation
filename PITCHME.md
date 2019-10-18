@@ -22,6 +22,7 @@
 - React
 - Vue
 - Angular
+- Redux 
 - DOM and virtual DOM
 - Minigram project
 - Feature comparison and discussions
@@ -30,7 +31,7 @@
 @snapend
 
 @snap[east span-45]
-@img[shadow](assets/img/dino-1.png)
+@img[shadow](assets/img/JSLogo.png)
 @snapend
 
 ---
