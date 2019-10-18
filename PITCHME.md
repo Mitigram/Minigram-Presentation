@@ -1,10 +1,5 @@
 # Minigram
 
-
-
-
-
-
 ---?color=linear-gradient(90deg, #5384AD 65%, white 35%)
 @title[Agenda]
 
@@ -18,7 +13,7 @@
 - Package management, bundling, task runners and transpiling
 - ES2015 (ES6) and beyond...
 - TypeScript
-- Frontend libraries and framewor
+- Frontend libraries and frameworks
 - React
 - Vue
 - Angular
@@ -34,6 +29,24 @@
 @img[shadow](assets/img/JSLogo.png)
 @snapend
 
+---
+
+#### Using JavaScript the “old-school” way
+
+```HTML
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mitigram Marketplace</title>
+  <script src="index.js"></script>
+</head>
+<body>
+  <h1>Hello from HTML!</h1>
+</body>
+</html>
+```
 ---
 
 ### Arrows
