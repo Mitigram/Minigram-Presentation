@@ -1,5 +1,33 @@
 # Minigram
 
+---?color=linear-gradient(90deg, #5384AD 65%, white 35%)
+@title[Agenda]
+
+@snap[north-west h4-white]
+#### Agenda...
+@snapend
+
+@snap[west span-55]
+@ul[list-spaced-bullets text-white text-09]
+- Modern JavaScript
+- Package management, bundling, task runners and transpiling
+- ES2015 (ES6) and beyond...
+- TypeScript
+- Frontend libraries and framweorks
+- React
+- Vue
+- Angular
+- DOM and virtual DOM
+- Minigram project
+- Feature comparison and discussions
+- Future path for Mitigram
+@ulend
+@snapend
+
+@snap[east span-45]
+@img[shadow](assets/img/dino-1.png)
+@snapend
+
 ---
 
 ### Arrows
