@@ -1,5 +1,10 @@
 # Minigram
 
+
+
+
+
+
 ---?color=linear-gradient(90deg, #5384AD 65%, white 35%)
 @title[Agenda]
 
@@ -8,12 +13,12 @@
 @snapend
 
 @snap[west span-55]
-@ul[list-spaced-bullets text-white text-09]
+@ul[list-spaced-bullets text-white text-04]
 - Modern JavaScript
 - Package management, bundling, task runners and transpiling
 - ES2015 (ES6) and beyond...
 - TypeScript
-- Frontend libraries and framweorks
+- Frontend libraries and framewor
 - React
 - Vue
 - Angular
