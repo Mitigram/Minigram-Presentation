@@ -9,7 +9,7 @@
 @title[Agenda]
 
 @snap[north-west h4-white]
-#### Agenda...
+## Agenda
 @snapend
 
 @snap[west span-55]
