@@ -81,11 +81,9 @@ console.log(moment().startOf('day').fromNow());
 
 @snap[midpoint span-50 text-07]
 
-@ul[list-spaced-bullets]
+@ul
 - Note that moment.min.js must loaded before index.js, so you can use the moment function in index.js.
-
 - The good thing is that this easy enough to understand. 
-
 - The bad thing is that it is annoying to find and download new versions of libraries every time they would update.
 @ulend
 @snapend
@@ -94,12 +92,13 @@ console.log(moment().startOf('day').fromNow());
 
 #### Package management
 
-@ul[list-spaced-bullets text-02]
+@snap[midpoint span-50 text-07]
+@ul
 - Bower - 2013 - https://bower.io/
 - npm - 2015 - https://www.npmjs.com/
 - yarn - 2016 - https://yarnpkg.com
 @ulend
-
+@snapend
 ---
 
 #### Using NPM
