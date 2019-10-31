@@ -81,12 +81,13 @@ console.log(moment().startOf('day').fromNow());
 
 @snap[midpoint span-50 text-07]
 
-Note that moment.min.js must loaded before index.js, so you can use the moment function in index.js.
+@ul[list-spaced-bullets]
+- Note that moment.min.js must loaded before index.js, so you can use the moment function in index.js.
 
-The good thing is that this easy enough to understand. 
+- The good thing is that this easy enough to understand. 
 
-The bad thing is that it is annoying to find and download new versions of libraries every time they would update.
-
+- The bad thing is that it is annoying to find and download new versions of libraries every time they would update.
+@ulend
 @snapend
 
 ---
