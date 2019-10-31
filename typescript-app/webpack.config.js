@@ -9,7 +9,9 @@ module.exports = {
 
   devServer: {
     contentBase: './',
-    watchContentBase: true
+    watchContentBase: true,
+    host: '0.0.0.0',
+    disableHostCheck: true
   },
 
   resolve: {

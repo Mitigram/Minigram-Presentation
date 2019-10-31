@@ -854,6 +854,8 @@ Routing
 CSS encapsulation
 Form building
 Template, logic and styles in separate files
+Schematics
+Angular Elements
 
 ---
 
@@ -882,7 +884,67 @@ https://stackblitz.com/
 
 ---
 
+Web components
 
+1. HTML Template: The overall template of a web component. Angular has ng template, sort of similar.
+2. Shadow DOM: Maintain a DOM in memory, but not on the main DOM. Great for performance.
+3. HTML Imports: Import/export reusable bits of HTML. Hardly anyone uses it.
+4. Custom Elements: Ability to add to the vernacular of HTML, basically allows you to define a web component.
+
+
+---
+
+```JavaScript
+class myElement extends HTMLElement {}
+window.customElements.define(‘my-element’, myElement);
+```
+
+```JavaScript
+class MyElement extends HTMLElement {
+static get observedAttributes():string[]{ return [‘some-attribute’] }
+attributeChangedCallback(oldvalue, newvalue, key) {}}
+```
+
+```HTML
+<my-element some-attribute=”somevalue”></my-element>
+```
+---
+
+###Angular Elements
+
+Angular Elements are simply an Angular component, packaged as a Web Component.
+
+
+
+---
+
+Self-boot strapping: Drop on a page, and it works. Unlike full Angular, they don’t need complex boot strapping logic.
+Hosts an Angular component inside a web component
+Provides a bridge from angular concepts to web components. @Inputs() become properties. @Outputs become events. @HostBinding/Listener become CE attributes/Observed attributes.
+Zones are not needed.
+Angular on the inside, standards on the outside … SO … they can work and play well with basic HTML and other stacks!!!!
+
+---
+
+```
+ng new angularElements
+```
+
+```
+ng add @angular/elements
+```
+
+---
+
+```
+ng new angularElements
+```
+
+```
+ng add @angular/elements
+```
+
+---
 ## Add Some Slide Candy
 
 ![IMAGE](assets/img/presentation.png)
