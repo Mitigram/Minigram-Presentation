@@ -4,13 +4,16 @@
 @title[Agenda]
 
 @snap[north-west h4-white]
+
 #### Agenda
+
 @snapend
 
 @snap[west span-55]
 @ul[list-spaced-bullets text-white text-04]
+
 - Current state of Mitigram
-- Modern JavaScript 
+- Modern JavaScript
 - ES2015 (ES6) and beyond...
 - TypeScript
 - Package management, bundling, task runners and transpiling
@@ -20,8 +23,8 @@
 - Feature comparison and discussion
 - Bring Mitigram in to the modern era
 - Web Components
-@ulend
-@snapend
+  @ulend
+  @snapend
 
 @snap[east span-45]
 @img[shadow](assets/img/JSLogo.png)
@@ -45,12 +48,14 @@
 </body>
 </html>
 ```
+
 ---
 
 ```JavaScript
 // index.js
 console.log("Hello from JavaScript!");
 ```
+
 ---
 
 ### Including Moment.js
@@ -70,6 +75,7 @@ console.log("Hello from JavaScript!");
 </body>
 </html>
 ```
+
 ---
 
 ```JavaScript
@@ -77,15 +83,17 @@ console.log("Hello from JavaScript!");
 console.log("Hello from JavaScript!");
 console.log(moment().startOf('day').fromNow());
 ```
+
 ---
 
 @snap[midpoint span-50 text-07]
 
 @ul
-- Note that *moment.min.js* **must be loaded** before *index.js*, so you can use the *moment function* in *index.js*.
-- The good thing is that this easy enough to understand. 
+
+- Note that _moment.min.js_ **must be loaded** before _index.js_, so you can use the _moment function_ in _index.js_.
+- The good thing is that this easy enough to understand.
 - The bad thing is that it is annoying to find and download new versions of libraries every time they would update.
-@ulend
+  @ulend
 
 @snapend
 
@@ -97,11 +105,13 @@ console.log(moment().startOf('day').fromNow());
 
 @snap[midpoint span-50 text-07]
 @ul
+
 - Bower - 2013 - https://bower.io/
 - npm - 2015 - https://www.npmjs.com/
 - yarn - 2016 - https://yarnpkg.com
-@ulend
-@snapend
+  @ulend
+  @snapend
+
 ---
 
 #### Using NPM
@@ -109,6 +119,7 @@ console.log(moment().startOf('day').fromNow());
 ```
 $ npm init // generate package.json
 ```
+
 ```JSON
 {
   "name": "your-project-name",
@@ -130,6 +141,7 @@ $ npm init // generate package.json
 ```
 $ npm install moment --save
 ```
+
 ```JSON
 {
   "name": "modern-javascript-example",
@@ -185,7 +197,7 @@ The bad thing is right now we’re digging through the **node_modules** folder t
 
 ### Using a JavaScript module bundler
 
-Most programming languages, provide a way to import code from one file into another. 
+Most programming languages, provide a way to import code from one file into another.
 
 ```csharp
 using App.Application.Contracts;
@@ -205,19 +217,21 @@ using TypeLess;
 @snap[west span-40 text-center text-08]
 
 @ul
+
 - JavaScript wasn’t originally designed with this feature.
-- JavaScript was designed to only run in the browser
-- No access to the file system of the client’s computer for security reasons 
-@ulend
-@snapend
+  - JavaScript was designed to only run in the browser
+- No access to the file system of the client’s computer for security reasons
+  @ulend
+  @snapend
 
 @snap[east span-40 text-white text-06]
 @ul
+
 - Organizing JavaScript code in multiple files required you to load each file with variables shared globally.
 - In 2009 a project named **CommonJS** was started with the goal of specifying an ecosystem for JavaScript outside the browser.
 - The most well-known of implementation of CommonJS modules is **node.js**.
-@ulend
-@snapend
+  @ulend
+  @snapend
 
 ---?color=linear-gradient(180deg, white 50%, #E71E60 50%)
 
@@ -229,13 +243,14 @@ var moment = require('moment');
 console.log("Hello from JavaScript!");
 console.log(moment().startOf('day').fromNow());
 ```
+
 @snapend
 
 @snap[south span-85 text-06 text-white]
 @ul
-- This is all great for **node.js**, but if you tried to use the above code in the browser, you’d get an error saying *require is not defined*. 
+- This is all great for **node.js**, but if you tried to use the above code in the browser, you’d get an error saying _require is not defined_.
 - The browser doesn’t have access to the file system.
-- This is where a *module bundler* comes in.
+- This is where a _module bundler_ comes in.
 @ulend
 @snapend
 
@@ -251,10 +266,13 @@ console.log(moment().startOf('day').fromNow());
 
 ---
 
+@snap[north]
 ```
 $ npm install webpack webpack-cli --save-dev
 ```
+@snapend
 
+@snap[midpoint]
 ```JSON
 {
   "name": "modern-javascript-example",
@@ -275,15 +293,23 @@ $ npm install webpack webpack-cli --save-dev
   }
 }
 ```
+@snapend
 
 ---
+
+@snap[north text-07]
 
 ```
 $ ./node_modules/.bin/webpack index.js --mode=development
 ```
 
-This command will run the webpack tool that was installed in the node_modules folder, start with the index.js file, find any require statements, and replace them with the appropriate code to create a single output file (which by default is dist/main.js). 
+@snapend
 
+@snap[south text-07]
+
+This command will run the webpack tool that was installed in the node_modules folder, start with the index.js file, find any require statements, and replace them with the appropriate code to create a single output file (which by default is dist/main.js).
+
+@snapend
 ---
 
 ```HTML
@@ -300,6 +326,7 @@ This command will run the webpack tool that was installed in the node_modules fo
 </body>
 </html>
 ```
+
 ---
 
 This is tedious, and will get even more tedious as we use webpack’s more advanced features (like generating source maps to help debug the original code from the transpiled code).
@@ -334,24 +361,24 @@ $ ./node_modules/.bin/webpack
 
 ### JavaScript versions
 
-|     |                       |                                                                                                                     |   |   |
-|-----|-----------------------|---------------------------------------------------------------------------------------------------------------------|---|---|
-| 1   | ECMAScript 1 (1997)   | First Edition.                                                                                                      |   |   |
-| 2   | ECMAScript 2 (1998)   | Editorial changes only.                                                                                             |   |   |
-| 3   | ECMAScript 3 (1999)   | Added Regular Expressions.Added try/catch.                                                                          |   |   |
-| 4   | ECMAScript 4          | Never released.                                                                                                     |   |   |
-| 5   | ECMAScript 5 (2009)   | Added "strict mode". Added JSON support. Added String.trim(). Added Array.isArray(). Added Array Iteration Methods. |   |   |
-| 5.1 | ECMAScript 5.1 (2011) | Editorial changes.                                                                                                  |   |   |
-| 6   | ECMAScript 2015       | Added let and const. Added default parameter values. Added Array.find(). Added Array.findIndex().                   |   |   |
-| 7   | ECMAScript 2016       | Added exponential operator (**). Added Array.prototype.includes.                                                    |   |   |
-| 8   | ECMAScript 2017       | Added string padding. Added new Object properties. Added Async functions. Added Shared Memory.                      |   |   |
-| 9   | ECMAScript 2018       | Added rest / spread properties. Added Asynchronous iteration. Added Promise.finally(). Additions to RegExp.         |   |   |
+|     |                       |                                                                                                                     |     |     |
+| --- | --------------------- | ------------------------------------------------------------------------------------------------------------------- | --- | --- |
+| 1   | ECMAScript 1 (1997)   | First Edition.                                                                                                      |     |     |
+| 2   | ECMAScript 2 (1998)   | Editorial changes only.                                                                                             |     |     |
+| 3   | ECMAScript 3 (1999)   | Added Regular Expressions.Added try/catch.                                                                          |     |     |
+| 4   | ECMAScript 4          | Never released.                                                                                                     |     |     |
+| 5   | ECMAScript 5 (2009)   | Added "strict mode". Added JSON support. Added String.trim(). Added Array.isArray(). Added Array Iteration Methods. |     |     |
+| 5.1 | ECMAScript 5.1 (2011) | Editorial changes.                                                                                                  |     |     |
+| 6   | ECMAScript 2015       | Added let and const. Added default parameter values. Added Array.find(). Added Array.findIndex().                   |     |     |
+| 7   | ECMAScript 2016       | Added exponential operator (\*\*). Added Array.prototype.includes.                                                  |     |     |
+| 8   | ECMAScript 2017       | Added string padding. Added new Object properties. Added Async functions. Added Shared Memory.                      |     |     |
+| 9   | ECMAScript 2018       | Added rest / spread properties. Added Asynchronous iteration. Added Promise.finally(). Additions to RegExp.         |     |     |
 
 ---
 
 ### Browser support
 
-JavaScript has had modules for a long time implemented via libraries (require.js), not built into the language. 
+JavaScript has had modules for a long time implemented via libraries (require.js), not built into the language.
 
 ES6 is the first time that JavaScript has built-in modules.
 
@@ -555,6 +582,7 @@ alert("2π = " + sum(pi, pi));
 ---
 
 ### SOME ADVANTAGES OF USING MODULES
+
 Code can be split into smaller files of self-contained functionality.
 Multiple scripts can be concatenated thereby increasing performance.
 Debugging becomes easier.
@@ -563,14 +591,13 @@ Modules (usually) helps eradicate naming conflicts. Function sumAll() in module1
 ES6 Modules are always executed in strict mode, so there is no need for ‘use strict’ .
 ES6 modules help you to organize your code better
 
-
 ---
 
 ### Notable features
 
 #### ECMAScript 2016-2019 ...
 
-### ES2016 - Array.prototype.includes 
+### ES2016 - Array.prototype.includes
 
 ```JavaScript
 [1, 2, 3].includes(-1)                   // false
@@ -581,6 +608,7 @@ ES6 modules help you to organize your code better
 ['foo', 'bar', 'quux'].includes('foo')   // true
 ['foo', 'bar', 'quux'].includes('norf')  // false
 ```
+
 ### ES2017 -- async await
 
 An asynchronous function is a function which operates asynchronously via the event loop, using an implicit Promise to return its result.
@@ -620,11 +648,9 @@ testFinally().then(() => console.debug("resolved")).finally(() => console.debug(
 
 ```
 
-
 ### ES2019 -- Array.prototype.{flat,flatMap}
 
-The flat() method enables you to easily concatenate all sub-array elements of an array. 
-
+The flat() method enables you to easily concatenate all sub-array elements of an array.
 
 ```JavaScript
 let arr = ['a', 'b', ['c', 'd']];
@@ -634,7 +660,7 @@ console.log(flattened);    // => ["a", "b", "c", "d"]
 
 const arr = [4.25, 19.99, [25.5]];
 
-console.log(arr.flatMap(value => [Math.round(value)]));    
+console.log(arr.flatMap(value => [Math.round(value)]));
 // => [4, 20, 26]
 ```
 
@@ -643,14 +669,12 @@ console.log(arr.flatMap(value => [Math.round(value)]));
 const myArray = [['one', 1], ['two', 2], ['three', 3]];
 const obj = Object.fromEntries(myArray);
 
-console.log(obj);    // => {one: 1, two: 2, three: 3}
-
+console.log(obj); // => {one: 1, two: 2, three: 3}
 
 ### ... and more
 
 https://www.w3schools.com/js/js_es6.asp
 https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2015.MD
-
 
 ### Using TypeScript
 
@@ -680,6 +704,7 @@ let user = "Slim Dady";
 
 console.log(greeter(user));
 ```
+
 ```
 tsc greeter.ts
 ```
@@ -702,6 +727,7 @@ let user = { firstName: "Jane", lastName: "User" };
 
 console.log(greeter(user));
 ```
+
 ---
 
 ### Classes
@@ -751,6 +777,7 @@ tsconfig.json
     }
 }
 ```
+
 ---
 
 webpack.config.js
@@ -803,8 +830,8 @@ $ ./node_modules/.bin/webpack
 
 ### Frontend libraries and frameworks
 
-- 2005 Prototype 
-- 2005 Dojo 
+- 2005 Prototype
+- 2005 Dojo
 - 2006 jQuery
 - 2006 Microsoft ASP.NET Ajax (Atlas)
 - 2006 YUI Library
@@ -828,7 +855,7 @@ $ ./node_modules/.bin/webpack
 - Webpack
 - CLI
 - Babel and TypeScript
-- Virtual DOM, Shadow DOM, 
+- Virtual DOM, Shadow DOM,
 - Data-driven templates (JSX)
 - Redux
 
@@ -845,6 +872,7 @@ Every component gets compiled into a series of instructions. These instructions 
 ---
 
 ### React
+
 React is a JavaScript library developed and maintained by Facebook.
 
 JSX + JS (ES5/ES6)
@@ -874,6 +902,7 @@ ReactDOM.render(
 ```
 
 ---
+
 ### Vue
 
 Two-way databinding
@@ -901,9 +930,10 @@ var app = new Vue({
   }
 })
 ```
+
 ---
 
-### Angular 
+### Angular
 
 Angular is a fully-fledged MVC framework written in TypeScript
 
@@ -953,7 +983,6 @@ Web components
 3. HTML Imports: Import/export reusable bits of HTML. Hardly anyone uses it.
 4. Custom Elements: Ability to add to the vernacular of HTML, basically allows you to define a web component.
 
-
 ---
 
 ```JavaScript
@@ -970,13 +999,12 @@ attributeChangedCallback(oldvalue, newvalue, key) {}}
 ```HTML
 <my-element some-attribute=”somevalue”></my-element>
 ```
+
 ---
 
 ###Angular Elements
 
 Angular Elements are simply an Angular component, packaged as a Web Component.
-
-
 
 ---
 
@@ -1007,6 +1035,7 @@ ng add @angular/elements
 ```
 
 ---
+
 ## Add Some Slide Candy
 
 ![IMAGE](assets/img/presentation.png)
@@ -1015,7 +1044,9 @@ ng add @angular/elements
 @title[Customize Slide Layout]
 
 @snap[west span-50]
+
 ## Customize the Layout
+
 @snapend
 
 @snap[east span-50]
@@ -1030,17 +1061,20 @@ Snap Layouts let you create custom slide designs directly within your markdown.
 @title[Add A Little Imagination]
 
 @snap[north-west h4-white]
+
 #### And start presenting...
+
 @snapend
 
 @snap[west span-55]
 @ul[list-spaced-bullets text-white text-09]
+
 - You will be amazed
 - What you can achieve
-- *With a little imagination...*
+- _With a little imagination..._
 - And **GitPitch Markdown**
-@ulend
-@snapend
+  @ulend
+  @snapend
 
 @snap[east span-45]
 @img[shadow](assets/img/conference.png)
@@ -1070,16 +1104,15 @@ REFERENCES "forum" ("id");
 @[8-9, zoom-12](This means no more switching between your slide deck and IDE on stage.)
 @snapend
 
-
 ---?image=assets/img/presenter.jpg
 
 @snap[north span-100 h2-white]
+
 ## Now It's Your Turn
+
 @snapend
 
-@snap[south span-100 text-06]
-[Click here to jump straight into the interactive feature guides in the GitPitch Docs @fa[external-link]](https://gitpitch.com/docs/getting-started/tutorial/)
+@snap[south span-100 text-06]Click here to jump straight into the interactive feature guides in the GitPitch Docs @fa[external-link]](https://gitpitch.com/docs/getting-started/tutorial/)
 @snapend
-
 
 https://blog.nrwl.io/understanding-angular-ivy-incremental-dom-and-virtual-dom-243be844bf36
