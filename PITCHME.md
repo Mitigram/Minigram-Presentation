@@ -4,7 +4,7 @@
 @title[Agenda]
 
 @snap[north-west h4-white]
-### Agenda
+#### Agenda
 @snapend
 
 @snap[west span-55]
@@ -86,11 +86,14 @@ console.log(moment().startOf('day').fromNow());
 - The good thing is that this easy enough to understand. 
 - The bad thing is that it is annoying to find and download new versions of libraries every time they would update.
 @ulend
+
 @snapend
 
 ---
 
 ### Package management
+
+---
 
 @snap[midpoint span-50 text-07]
 @ul
@@ -167,11 +170,19 @@ $ npm install moment --save
 </html>
 ```
 
----
+---?color=linear-gradient(90deg, white 50%, black 50%)
+
+@snap[west span-40]
 
 The good thing is that we can now use **npm** to download and update our packages through the command line.
 
+@snapend
+
+@snap[east span-40]
+
 The bad thing is right now we’re digging through the **node_modules** folder to find the location of each package and manually including it in our HTML
+
+@snapend
 
 ---
 
