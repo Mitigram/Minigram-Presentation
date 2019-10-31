@@ -172,15 +172,15 @@ $ npm install moment --save
 
 ---?color=linear-gradient(90deg, white 50%, black 50%)
 
-@snap[west span-40]
+@snap[west span-40 text-07]
 
 The good thing is that we can now use **npm** to download and update our packages through the command line.
 
 @snapend
 
-@snap[east span-40]
+@snap[east span-40 text-07 text-white]
 
-The bad thing is right now we’re digging through the **node_modules** folder to find the location of each package and manually including it in our HTML
+The bad thing is right now we’re digging through the **node_modules** folder to find the location of each package and manually including it in our HTML.
 
 @snapend
 
