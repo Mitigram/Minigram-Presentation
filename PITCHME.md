@@ -266,7 +266,7 @@ console.log(moment().startOf('day').fromNow());
 
 ---
 
-@snap[north]
+@snap[north-west]
 ```
 $ npm install webpack webpack-cli --save-dev
 ```
@@ -297,7 +297,7 @@ $ npm install webpack webpack-cli --save-dev
 
 ---
 
-@snap[north text-07]
+@snap[north-west]
 
 ```
 $ ./node_modules/.bin/webpack index.js --mode=development
@@ -305,9 +305,9 @@ $ ./node_modules/.bin/webpack index.js --mode=development
 
 @snapend
 
-@snap[south text-07]
+@snap[midpoint]
 
-This command will run the webpack tool that was installed in the node_modules folder, start with the index.js file, find any require statements, and replace them with the appropriate code to create a single output file (which by default is dist/main.js).
+This command will run the webpack tool that was installed in the *node_modules* folder start with the index.js file, find any require statements, and replace them with the appropriate code to create a single output file (which by default is dist/main.js).
 
 @snapend
 ---
