@@ -4,7 +4,7 @@
 @title[Agenda]
 
 @snap[north-west h4-white]
-#### Agenda
+### Agenda
 @snapend
 
 @snap[west span-55]
@@ -29,7 +29,7 @@
 
 ---
 
-#### Using JavaScript the “old-school” way
+### Using JavaScript the “old-school” way
 
 ```HTML
 <!-- index.html -->
@@ -53,7 +53,7 @@ console.log("Hello from JavaScript!");
 ```
 ---
 
-#### Including Moment.js
+### Including Moment.js
 
 ```HTML
 <!-- index.html -->
@@ -82,7 +82,7 @@ console.log(moment().startOf('day').fromNow());
 @snap[midpoint span-50 text-07]
 
 @ul
-- Note that moment.min.js must loaded before index.js, so you can use the moment function in index.js.
+- Note that *moment.min.js* **must be loaded** before *index.js*, so you can use the *moment function* in *index.js*.
 - The good thing is that this easy enough to understand. 
 - The bad thing is that it is annoying to find and download new versions of libraries every time they would update.
 @ulend
@@ -90,7 +90,7 @@ console.log(moment().startOf('day').fromNow());
 
 ---
 
-#### Package management
+### Package management
 
 @snap[midpoint span-50 text-07]
 @ul
