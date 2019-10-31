@@ -122,9 +122,6 @@ $ npm init // generate package.json
   "license": "ISC"
 }
 ```
-```
-$ npm install moment --save
-```
 
 ---
 
@@ -207,26 +204,24 @@ using TypeLess;
 
 @snap[west span-40 text-center text-08]
 
-JavaScript wasn’t originally designed with this feature.
-
-JavaScript was designed to only run in the browser
-
-For security reasons no access to the file system of the client’s computer
-
+@ul
+- JavaScript wasn’t originally designed with this feature.
+- JavaScript was designed to only run in the browser
+- No access to the file system of the client’s computer for security reasons 
+@ulend
 @snapend
 
 @snap[east span-40 text-white text-06]
 @ul
 - Organizing JavaScript code in multiple files required you to load each file with variables shared globally.
 - In 2009 a project named **CommonJS** was started with the goal of specifying an ecosystem for JavaScript outside the browser.
-- The most well-known of implementation of **CommonJS modules is ***node.js**.
+- The most well-known of implementation of CommonJS modules is **node.js**.
 @ulend
 @snapend
 
 ---?color=linear-gradient(180deg, white 50%, #E71E60 50%)
 
-@snap[north span-40]
-
+@snap[north]
 
 ```JavaScript
 // index.js
@@ -246,9 +241,13 @@ console.log(moment().startOf('day').fromNow());
 
 ---
 
-We need a module bundler to find all require statements (which is invalid browser JavaScript syntax) and replace them with the actual contents of each required file. 
-
-Around 2015, webpack eventually became the more widely used module bundler (fueled by the popularity of the React frontend framework, which took full advantage of webpack’s various features).
+@snap[midpoint span-50 text-07]
+@ul
+- We need a module bundler to find all require statements and replace them with the actual contents of each required file.
+- Around 2015, **webpack** eventually became the more widely used module bundler.
+- Fueled by the popularity of the **React** frontend framework, which took full advantage of webpack’s various features.
+@ulend
+@snapend
 
 ---
 
