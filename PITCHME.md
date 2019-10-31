@@ -79,12 +79,13 @@ console.log(moment().startOf('day').fromNow());
 ```
 ---
 
+@ul
 Note that moment.min.js must loaded before index.js, so you can use the moment function in index.js.
 
 The good thing is that this easy enough to understand. 
 
 The bad thing is that it is annoying to find and download new versions of libraries every time they would update.
-
+@ulend
 ---
 
 #### Package management
