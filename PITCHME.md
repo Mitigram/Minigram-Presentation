@@ -15,12 +15,8 @@
 - ES2015 (ES6) and beyond...
 - TypeScript
 - Frontend libraries and frameworks
-- Redux 
-- DOM and virtual DOM
-- React
-- Vue
-- Angular
-- Minigram project
+- Minigram project - React, Vue, Angular
+- Redux and virtual DOM
 - Feature comparison and discussions
 - Bring Mitigram in to the modern era
 - Web Components
