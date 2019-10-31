@@ -11,16 +11,15 @@
 @ul[list-spaced-bullets text-white text-04]
 - Current state of Mitigram
 - Modern JavaScript 
-- Package management, bundling, task runners and transpiling
 - ES2015 (ES6) and beyond...
 - TypeScript
+- Package management, bundling, task runners and transpiling
 - Frontend libraries and frameworks
 - Minigram project - React, Vue, Angular
 - Redux and virtual DOM
-- Feature comparison and discussions
+- Feature comparison and discussion
 - Bring Mitigram in to the modern era
 - Web Components
-- Angular Elements
 @ulend
 @snapend
 
@@ -80,6 +79,14 @@ console.log(moment().startOf('day').fromNow());
 ```
 ---
 
+Note that moment.min.js must loaded before index.js, so you can use the moment function in index.js.
+
+The good thing is that this easy enough to understand. 
+
+The bad thing is that it is annoying to find and download new versions of libraries every time they would update.
+
+---
+
 #### Package management
 
 @ul[list-spaced-bullets text-02]
@@ -91,7 +98,7 @@ console.log(moment().startOf('day').fromNow());
 #### Using NPM
 
 ```
-$ npm init
+$ npm init // generate package.json
 ```
 ```JSON
 {
@@ -153,16 +160,58 @@ $ npm install moment --save
 </body>
 </html>
 ```
+---
 
+The good thing is that we can now use **npm** to download and update our packages through the command line.
+
+The bad thing is right now we’re digging through the **node_modules** folder to find the location of each package and manually including it in our HTML
 ---
 
 #### Using a JavaScript module bundler (webpack)
 
-Most programming languages provide a way to import code from one file into another. JavaScript wasn’t originally designed with this feature, because JavaScript was designed to only run in the browser, with no access to the file system of the client’s computer (for security reasons). So for the longest time, organizing JavaScript code in multiple files required you to load each file with variables shared globally.
+Most programming languages, like C#, provide a way to import code from one file into another. 
 
-In 2009, a project named CommonJS was started with the goal of specifying an ecosystem for JavaScript outside the browser. 
+```csharp
+using App.Application.Contracts;
+using App.Application.Interface.Models;
+using App.Enumerations;
+using Newtonsoft.Json;
+using System;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+using TypeLess;
+```
 
-The most well-known of implementation of CommonJS modules is node.js.
+---
+
+---?color=linear-gradient(90deg, white 50%, black 50%)
+
+@snap[west span-40 text-center]
+
+JavaScript wasn’t originally designed with this feature, because JavaScript was designed to only run in the browser, with no access to the file system of the client’s computer (for security reasons).
+
+@snapend
+
+@snap[north-east span-40 text-08]
+@box[](So for the longest time, organizing JavaScript code in multiple files required you to load each file with variables shared globally.)
+@snapend
+
+@snap[east span-40 text-08]
+@box[](In 2009, a project named CommonJS was started with the goal of specifying an ecosystem for JavaScript outside the browser. )
+@snapend
+
+@snap[south-east span-40 text-08]
+@box[](The most well-known of implementation of CommonJS modules is node.js.)
+@snapend
+
+
+
+
+
+
+
+
+
 
 ---
 
