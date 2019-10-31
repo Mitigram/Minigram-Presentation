@@ -186,9 +186,9 @@ The bad thing is right now we’re digging through the **node_modules** folder t
 
 ---
 
-### Using a JavaScript module bundler (webpack)
+### Using a JavaScript module bundler
 
-Most programming languages, like C#, provide a way to import code from one file into another. 
+Most programming languages, provide a way to import code from one file into another. 
 
 ```csharp
 using App.Application.Contracts;
@@ -205,24 +205,23 @@ using TypeLess;
 
 ---?color=linear-gradient(90deg, white 50%, black 50%)
 
-@snap[west span-40 text-center]
+@snap[west span-40 text-center text-08]
 
-JavaScript wasn’t originally designed with this feature, because JavaScript was designed to only run in the browser, with no access to the file system of the client’s computer (for security reasons).
+JavaScript wasn’t originally designed with this feature.
+
+JavaScript was designed to only run in the browser
+
+For security reasons no access to the file system of the client’s computer
 
 @snapend
 
-@snap[north-east span-40 text-08]
-@box[](So for the longest time, organizing JavaScript code in multiple files required you to load each file with variables shared globally.)
+@snap[east span-40 text-white text-08]
+@ul
+- So for the longest time, organizing JavaScript code in multiple files required you to load each file with variables shared globally.
+- In 2009, a project named CommonJS was started with the goal of specifying an ecosystem for JavaScript outside the browser.
+- The most well-known of implementation of CommonJS modules is node.js.
+@ulend
 @snapend
-
-@snap[east span-40 text-08]
-@box[](In 2009, a project named CommonJS was started with the goal of specifying an ecosystem for JavaScript outside the browser. )
-@snapend
-
-@snap[south-east span-40 text-08]
-@box[](The most well-known of implementation of CommonJS modules is node.js.)
-@snapend
-
 
 
 
