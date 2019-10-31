@@ -226,6 +226,8 @@ For security reasons no access to the file system of the client’s computer
 ---?color=linear-gradient(180deg, white 50%, #E71E60 50%)
 
 @snap[north span-40]
+
+
 ```JavaScript
 // index.js
 var moment = require('moment');
@@ -234,14 +236,12 @@ console.log(moment().startOf('day').fromNow());
 ```
 @snapend
 
-@snap[south span-85]
-
-This is all great for **node.js**, but if you tried to use the above code in the browser, you’d get an error saying *require is not defined*. 
-
-The browser doesn’t have access to the file system.
-
-This is where a *module bundler* comes in.
-
+@snap[south span-85 text-06 text-white]
+@ul
+- This is all great for **node.js**, but if you tried to use the above code in the browser, you’d get an error saying *require is not defined*. 
+- The browser doesn’t have access to the file system.
+- This is where a *module bundler* comes in.
+@ulend
 @snapend
 
 ---
