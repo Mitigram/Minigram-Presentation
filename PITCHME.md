@@ -215,34 +215,34 @@ For security reasons no access to the file system of the client’s computer
 
 @snapend
 
-@snap[east span-40 text-white text-08]
+@snap[east span-40 text-white text-06]
 @ul
-- So for the longest time, organizing JavaScript code in multiple files required you to load each file with variables shared globally.
-- In 2009, a project named CommonJS was started with the goal of specifying an ecosystem for JavaScript outside the browser.
-- The most well-known of implementation of CommonJS modules is node.js.
+- Organizing JavaScript code in multiple files required you to load each file with variables shared globally.
+- In 2009 a project named **CommonJS** was started with the goal of specifying an ecosystem for JavaScript outside the browser.
+- The most well-known of implementation of **CommonJS modules is ***node.js**.
 @ulend
 @snapend
 
+---?color=linear-gradient(180deg, white 50%, #E71E60 50%)
 
-
-
-
-
-
-
-
----
-
+@snap[north span-40]
 ```JavaScript
 // index.js
 var moment = require('moment');
 console.log("Hello from JavaScript!");
 console.log(moment().startOf('day').fromNow());
 ```
+@snapend
 
-This is all great for node.js, but if you tried to use the above code in the browser, you’d get an error saying require is not defined. The browser doesn’t have access to the file system.
+@snap[south span-85]
 
-This is where a module bundler comes in.
+This is all great for **node.js**, but if you tried to use the above code in the browser, you’d get an error saying *require is not defined*. 
+
+The browser doesn’t have access to the file system.
+
+This is where a *module bundler* comes in.
+
+@snapend
 
 ---
 
