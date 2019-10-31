@@ -79,13 +79,16 @@ console.log(moment().startOf('day').fromNow());
 ```
 ---
 
-@ul
+@snap[midpoint span-50 text-07]
+
 Note that moment.min.js must loaded before index.js, so you can use the moment function in index.js.
 
 The good thing is that this easy enough to understand. 
 
 The bad thing is that it is annoying to find and download new versions of libraries every time they would update.
-@ulend
+
+@snapend
+
 ---
 
 #### Package management
@@ -172,7 +175,7 @@ The bad thing is right now we’re digging through the **node_modules** folder t
 
 ---
 
-#### Using a JavaScript module bundler (webpack)
+### Using a JavaScript module bundler (webpack)
 
 Most programming languages, like C#, provide a way to import code from one file into another. 
 
