@@ -96,6 +96,8 @@ The bad thing is that it is annoying to find and download new versions of librar
 - yarn - 2016 - https://yarnpkg.com
 @ulend
 
+---
+
 #### Using NPM
 
 ```
@@ -161,11 +163,13 @@ $ npm install moment --save
 </body>
 </html>
 ```
+
 ---
 
 The good thing is that we can now use **npm** to download and update our packages through the command line.
 
 The bad thing is right now we’re digging through the **node_modules** folder to find the location of each package and manually including it in our HTML
+
 ---
 
 #### Using a JavaScript module bundler (webpack)
