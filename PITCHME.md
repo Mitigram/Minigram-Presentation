@@ -228,9 +228,14 @@ using TypeLess;
 
 ---?color=linear-gradient(180deg, white 50%, #E71E60 50%)
 
-@snap[midpoint]
+@snap[midpoint span-85 shadow]
 
-@code[js zoom-13 code-max shadow](asstes/samples/require.js)
+```JavaScript
+// index.js
+var moment = require('moment');
+console.log("Hello from JavaScript!");
+console.log(moment().startOf('day').fromNow());
+```
 
 @snapend
 @snap[south span-85 text-06 text-white]
