@@ -386,18 +386,21 @@ $ ./node_modules/.bin/webpack
 @snapend
 ---
 
-### Browser support
+@snap[north]
+#### Browser support
+@snapend
 
+@snap[midpoint span-80 text-04]
 @ul
 - ECMAScript 3 is fully supported in all browsers.
 - ECMAScript 5 is fully supported in all modern browsers (https://caniuse.com/#feat=es5) .
 - JavaScript has had modules for a long time implemented via libraries (require.js), not built into the language.
 - ES6 is the first time that JavaScript has built-in modules.
-- Safari 10 and Edge 14 were the first browsers to fully support ES6.
+- Safari 10 and Edge 14 were the first browsers to fully support ES6 (https://caniuse.com/#feat=es6).
 - Internet Explorer does not support ES6.
 - Chrome 68 and Opera 55 support ES7.
 @ulend
-
+@snapend
 ---
 
 ### Notable features
@@ -406,8 +409,11 @@ $ ./node_modules/.bin/webpack
 
 ---
 
-### Let + Const
+@snap[north]
+#### Let + Const
+@snapend
 
+@snap[midpoint span-80 text-04]
 The let statement allows you to declare a variable with block scope.
 Constants are similar to let variables, except that the value cannot be changed.
 
@@ -426,11 +432,15 @@ function f() {
   }
 }
 ```
+@snapend
 
 ---
 
-### Arrows
+@snap[north]
+#### Arrows
+@snapend
 
+@snap[midpoint span-80 text-04]
 Arrows are a function shorthand using the => syntax. You don't need the function keyword, the return keyword, and the curly brackets. Unlike functions, arrows share the same lexical this as their surrounding code.
 
 ```JavaScript
@@ -452,7 +462,7 @@ var bob = {
   }
 }
 ```
-
+@snapend
 ---
 
 ### Classes
