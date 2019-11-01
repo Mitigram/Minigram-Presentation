@@ -293,15 +293,17 @@ $ npm install webpack webpack-cli --save-dev
 ```
 ---
 
-@snap[north-west]
+@snap[north]
 ```
 $ ./node_modules/.bin/webpack index.js --mode=development
 ```
 @snapend
 
-@snap[midpoint]
+@snap[midpoint span-50 text-07]
 This command will run the webpack tool that was installed in the _node_modules_ folder start with the index.js file, find any require statements, and replace them with the appropriate code to create a single output file (which by default is dist/main.js).
 @snapend
+
+---
 
 ```HTML
 <!-- index.html -->
@@ -317,10 +319,17 @@ This command will run the webpack tool that was installed in the _node_modules_ 
 </body>
 </html>
 ```
-
 ---
 
-This is tedious, and will get even more tedious as we use webpack’s more advanced features (like generating source maps to help debug the original code from the transpiled code).
+```
+$ ./node_modules/.bin/webpack index.js --mode=development
+```
+@snap[south span-50 text-07]
+Note that we’ll need to run the webpack command each time we change _index.js_.
+This is tedious, and will get even more tedious as we use webpack’s more advanced features like generating source maps.
+@snapend
+
+---
 
 ```JavaScript
 // webpack.config.js
@@ -340,14 +349,19 @@ $ ./node_modules/.bin/webpack
 
 ---
 
+@snap[north]
 #### Advantages of bundling
+@snapend
 
+@snap[midpoint span-50 text-07]
+@ul
 - We are no longer loading external scripts via global variables (yay!)
 - Any new JavaScript libraries will be added using require statements in the JavaScript
 - Having a single JavaScript bundle file is often better for performance.
 - And now that we added a build step, there are some other powerful features we can add to our development workflow!
 - Transpiling code for new language features - ES6 and beyond!
-
+@ulend
+@snapend
 ---
 
 ### JavaScript versions
