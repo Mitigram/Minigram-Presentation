@@ -368,7 +368,7 @@ $ ./node_modules/.bin/webpack
 #### JavaScript versions
 @snapend
 
-@snap[midpoint text-03]
+@snap[midpoint span-80 text-04]
 
 |     |                       |                                                                                                                     |     |     |
 | --- | --------------------- | ------------------------------------------------------------------------------------------------------------------- | --- | --- |
@@ -388,19 +388,15 @@ $ ./node_modules/.bin/webpack
 
 ### Browser support
 
-JavaScript has had modules for a long time implemented via libraries (require.js), not built into the language.
-
-ES6 is the first time that JavaScript has built-in modules.
-
-ECMAScript 3 is fully supported in all browsers.
-
-ECMAScript 5 is fully supported in all modern browsers.
-
-Internet Explorer does not support ES6.
-
-Safari 10 and Edge 14 were the first browsers to fully support ES6.
-
-Chrome 68 and Operd 55 support ES7.
+@ul
+- ECMAScript 3 is fully supported in all browsers.
+- ECMAScript 5 is fully supported in all modern browsers (https://caniuse.com/#feat=es5) .
+- JavaScript has had modules for a long time implemented via libraries (require.js), not built into the language.
+- ES6 is the first time that JavaScript has built-in modules.
+- Safari 10 and Edge 14 were the first browsers to fully support ES6.
+- Internet Explorer does not support ES6.
+- Chrome 68 and Opera 55 support ES7.
+@ulend
 
 ---
 
