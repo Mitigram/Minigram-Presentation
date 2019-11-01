@@ -217,11 +217,10 @@ using TypeLess;
 ---?color=linear-gradient(90deg, white 50%, black 50%)
 
 @snap[west span-40 text-center text-06]
-
 @ul
 - JavaScript wasn’t originally designed with this feature.
-- JavaScript was designed to only run in the browser
-- No access to the file system of the client’s computer for security reasons
+- JavaScript was designed to only run in the browser.
+- No access to the file system of the client’s computer for security reasons.
 @ulend
 @snapend
 
