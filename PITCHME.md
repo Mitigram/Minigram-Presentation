@@ -413,8 +413,9 @@ $ ./node_modules/.bin/webpack
 #### Let + Const
 @snapend
 
-@snap[midpoint span-80 text-04]
+@snap[midpoint span-80 text-06]
 The let statement allows you to declare a variable with block scope.
+
 Constants are similar to let variables, except that the value cannot be changed.
 
 ```JavaScript
@@ -440,8 +441,10 @@ function f() {
 #### Arrows
 @snapend
 
-@snap[midpoint span-80 text-04]
-Arrows are a function shorthand using the => syntax. You don't need the function keyword, the return keyword, and the curly brackets. Unlike functions, arrows share the same lexical this as their surrounding code.
+@snap[midpoint span-80 text-06]
+**Arrows** are a function shorthand using the => syntax. You don't need the function keyword, the return keyword, and the curly brackets. 
+
+Unlike functions, arrows share the same lexical this as their surrounding code.
 
 ```JavaScript
 // ES5
@@ -453,7 +456,7 @@ var x = function(x, y) {
 const x = (x, y) => x * y;
 
 // Lexical this
-var bob = {
+const bob = {
   _name: "Bob",
   _friends: ["Dady"],
   printFriends() {
@@ -463,10 +466,14 @@ var bob = {
 }
 ```
 @snapend
+
 ---
 
-### Classes
+@snap[north]
+#### Classes
+@snapend
 
+@snap[midpoint span-80 text-06]
 ES6 classes are a simple sugar over the prototype-based OO pattern. Classes support prototype-based inheritance, super calls, instance and static methods and constructors.
 
 ```JavaScript
@@ -477,11 +484,15 @@ class Car {
 }
 mycar = new Car("Ford");
 ```
+@snapend
 
 ---
 
-### Template strings
+@snap[north]
+#### Template strings
+@snapend
 
+@snap[midpoint span-80 text-06]
 ```JavaScript
 // Basic literal string creation
 `In JavaScript '\n' is a line-feed.`
@@ -494,11 +505,15 @@ mycar = new Car("Ford");
 var name = "Bob", time = "today";
 `Hello ${name}, how are you ${time}?`
 ```
+@snapend
 
 ---
 
-### Map + Set + WeakMap + WeakSet
+@snap[north]
+#### Map + Set + WeakMap + WeakSet
+@snapend
 
+@snap[midpoint span-80 text-06]
 Efficient data structures for common algorithms. WeakMaps provides leak-free object-key’d side tables.
 
 ```JavaScript
@@ -524,9 +539,15 @@ var ws = new WeakSet();
 ws.add({ data: 42 });
 // Because the added object has no other references, it will not be held in the set
 ```
+@snapend
 
+---
+
+@snap[north]
 ### Default + Rest + Spread
+@snapend
 
+@snap[midpoint span-80 text-06]
 Callee-evaluated default parameter values. Turn an array into consecutive arguments in a function call. Bind trailing parameters to an array. Rest replaces the need for arguments and addresses common cases more directly.
 
 ```JavaScript
@@ -546,12 +567,18 @@ function f(x, y, z) {
 // Pass each elem of array as argument
 f(...[1,2,3]) == 6
 ```
+@snapend
 
 ---
 
-### Promises
+@snap[north]
+#### Promises
+@snapend
 
-Promises are a library for asynchronous programming. Promises are a first class representation of a value that may be made available in the future. Promises are used in many existing JavaScript libraries.
+@snap[midpoint span-80 text-06]
+Promises are a library for asynchronous programming. 
+Promises are a first class representation of a value that may be made available in the future. 
+Promises are used in many existing JavaScript libraries.
 
 ```JavaScript
 function timeout(duration = 0) {
@@ -568,11 +595,15 @@ var p = timeout(1000).then(() => {
     return Promise.all([timeout(100), timeout(200)]);
 })
 ```
+@snapend
 
 ---
 
-### Modules
+@snap[north]
+#### Modules
+@snapend
 
+@snap[midpoint span-80 text-06]
 Language-level support for modules for component definition.
 
 ```JavaScript
@@ -594,18 +625,24 @@ alert("2π = " + math.sum(math.pi, math.pi));
 import {sum, pi} from "lib/math";
 alert("2π = " + sum(pi, pi));
 ```
+@snapend
 
 ---
+@snap[north]
+#### Some advantages of using modules
+@snapend
 
-### SOME ADVANTAGES OF USING MODULES
-
-Code can be split into smaller files of self-contained functionality.
-Multiple scripts can be concatenated thereby increasing performance.
-Debugging becomes easier.
-Any code referencing a module understands it is a dependency. If the module file is changed or moved, the problem is immediately obvious.
-Modules (usually) helps eradicate naming conflicts. Function sumAll() in module1 cannot clash with Function sumAll() in module2. Aliases are very useful here, it becomes module1.sumAll() and module2.sumAll().
-ES6 Modules are always executed in strict mode, so there is no need for ‘use strict’ .
-ES6 modules help you to organize your code better
+@snap[midpoint span-80 text-06]
+@ul
+- Code can be split into smaller files of self-contained functionality.
+- Multiple scripts can be concatenated thereby increasing performance.
+- Debugging becomes easier.
+- Any code referencing a module understands it is a dependency. If the module file is changed or moved, the problem is immediately obvious.
+- Modules (usually) helps eradicate naming conflicts. Function sumAll() in module1 cannot clash with Function sumAll() in module2. Aliases are very useful here, it becomes module1.sumAll() and module2.sumAll().
+- ES6 Modules are always executed in strict mode, so there is no need for ‘use strict’ .
+- ES6 modules help you to organize your code better
+@ulend
+@snapend
 
 ---
 
