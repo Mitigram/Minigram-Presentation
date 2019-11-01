@@ -234,6 +234,10 @@ using TypeLess;
 
 ---?color=linear-gradient(180deg, white 50%, #E71E60 50%)
 
+@snap[north span-85]
+![IMAGE](assets/img/nodejs.png)
+@snapend
+
 @snap[midpoint span-85 bg-white shadow]
 
 ```JavaScript
