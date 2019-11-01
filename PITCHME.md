@@ -99,7 +99,7 @@ console.log(moment().startOf('day').fromNow());
 
 ---
 
-@snap[midpoint span-50 text-07]
+@snap[midpoint span-60 text-07]
 @ul
 - Bower - 2013 - https://bower.io/
 - npm - 2015 - https://www.npmjs.com/
@@ -176,13 +176,13 @@ $ npm install moment --save
 
 ---?color=linear-gradient(90deg, white 50%, black 50%)
 
-@snap[west span-40 text-07]
+@snap[west span-50 text-center text-06]
 
 The good thing is that we can now use **npm** to download and update our packages through the command line.
 
 @snapend
 
-@snap[east span-40 text-07 text-white]
+@snap[east span-50 text-center text-06 text-white]
 
 The bad thing is right now we’re digging through the **node_modules** folder to find the location of each package and manually including it in our HTML.
 
@@ -209,46 +209,37 @@ using TypeLess;
 
 ---?color=linear-gradient(90deg, white 50%, black 50%)
 
-@snap[west span-40 text-center text-08]
+@snap[west span-40 text-center text-06]
 
 @ul
-
 - JavaScript wasn’t originally designed with this feature.
-  - JavaScript was designed to only run in the browser
+- JavaScript was designed to only run in the browser
 - No access to the file system of the client’s computer for security reasons
-  @ulend
-  @snapend
+@ulend
+@snapend
 
 @snap[east span-40 text-white text-06]
 @ul
-
 - Organizing JavaScript code in multiple files required you to load each file with variables shared globally.
 - In 2009 a project named **CommonJS** was started with the goal of specifying an ecosystem for JavaScript outside the browser.
 - The most well-known of implementation of CommonJS modules is **node.js**.
-  @ulend
-  @snapend
+@ulend
+@snapend
 
 ---?color=linear-gradient(180deg, white 50%, #E71E60 50%)
 
-@snap[north]
+@snap[midpoint]
 
-```JavaScript
-// index.js
-var moment = require('moment');
-console.log("Hello from JavaScript!");
-console.log(moment().startOf('day').fromNow());
-```
+@code[js zoom-13 code-max shadow](asstes/samples/require.js)
 
 @snapend
-
 @snap[south span-85 text-06 text-white]
 @ul
-
 - This is all great for **node.js**, but if you tried to use the above code in the browser, you’d get an error saying _require is not defined_.
 - The browser doesn’t have access to the file system.
 - This is where a _module bundler_ comes in.
-  @ulend
-  @snapend
+@ulend
+@snapend
 
 ---
 
