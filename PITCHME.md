@@ -11,7 +11,6 @@
 
 @snap[west span-55]
 @ul[list-spaced-bullets text-white text-04]
-
 - Current state of Mitigram
 - Modern JavaScript
 - ES2015 (ES6) and beyond...
@@ -23,8 +22,8 @@
 - Feature comparison and discussion
 - Bring Mitigram in to the modern era
 - Web Components
-  @ulend
-  @snapend
+@ulend
+@snapend
 
 @snap[east span-45]
 @img[shadow](assets/img/JSLogo.png)
@@ -248,31 +247,36 @@ console.log(moment().startOf('day').fromNow());
 
 @snap[south span-85 text-06 text-white]
 @ul
+
 - This is all great for **node.js**, but if you tried to use the above code in the browser, you’d get an error saying _require is not defined_.
 - The browser doesn’t have access to the file system.
 - This is where a _module bundler_ comes in.
-@ulend
-@snapend
+  @ulend
+  @snapend
 
 ---
 
 @snap[midpoint span-50 text-07]
 @ul
+
 - We need a module bundler to find all require statements and replace them with the actual contents of each required file.
 - Around 2015, **webpack** eventually became the more widely used module bundler.
 - Fueled by the popularity of the **React** frontend framework, which took full advantage of webpack’s various features.
-@ulend
-@snapend
+  @ulend
+  @snapend
 
 ---
 
 @snap[north-west]
+
 ```
 $ npm install webpack webpack-cli --save-dev
 ```
+
 @snapend
 
 @snap[midpoint]
+
 ```JSON
 {
   "name": "modern-javascript-example",
@@ -293,6 +297,7 @@ $ npm install webpack webpack-cli --save-dev
   }
 }
 ```
+
 @snapend
 
 ---
@@ -307,10 +312,9 @@ $ ./node_modules/.bin/webpack index.js --mode=development
 
 @snap[midpoint]
 
-This command will run the webpack tool that was installed in the *node_modules* folder start with the index.js file, find any require statements, and replace them with the appropriate code to create a single output file (which by default is dist/main.js).
+This command will run the webpack tool that was installed in the _node_modules_ folder start with the index.js file, find any require statements, and replace them with the appropriate code to create a single output file (which by default is dist/main.js).
 
-@snapend
----
+## @snapend
 
 ```HTML
 <!-- index.html -->
