@@ -86,14 +86,11 @@ console.log(moment().startOf('day').fromNow());
 ---
 
 @snap[midpoint span-50 text-07]
-
 @ul
-
 - Note that _moment.min.js_ **must be loaded** before _index.js_, so you can use the _moment function_ in _index.js_.
 - The good thing is that this easy enough to understand.
 - The bad thing is that it is annoying to find and download new versions of libraries every time they would update.
-  @ulend
-
+@ulend
 @snapend
 
 ---
@@ -104,12 +101,11 @@ console.log(moment().startOf('day').fromNow());
 
 @snap[midpoint span-50 text-07]
 @ul
-
 - Bower - 2013 - https://bower.io/
 - npm - 2015 - https://www.npmjs.com/
 - yarn - 2016 - https://yarnpkg.com
-  @ulend
-  @snapend
+@ulend
+@snapend
 
 ---
 
