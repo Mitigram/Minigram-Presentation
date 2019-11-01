@@ -228,7 +228,7 @@ using TypeLess;
 
 ---?color=linear-gradient(180deg, white 50%, #E71E60 50%)
 
-@snap[midpoint span-85 shadow]
+@snap[midpoint span-85 bg-white shadow]
 
 ```JavaScript
 // index.js
@@ -250,25 +250,17 @@ console.log(moment().startOf('day').fromNow());
 
 @snap[midpoint span-50 text-07]
 @ul
-
 - We need a module bundler to find all require statements and replace them with the actual contents of each required file.
 - Around 2015, **webpack** eventually became the more widely used module bundler.
 - Fueled by the popularity of the **React** frontend framework, which took full advantage of webpack’s various features.
-  @ulend
-  @snapend
+@ulend
+@snapend
 
 ---
-
-@snap[north-west]
 
 ```
 $ npm install webpack webpack-cli --save-dev
 ```
-
-@snapend
-
-@snap[midpoint]
-
 ```JSON
 {
   "name": "modern-javascript-example",
@@ -289,24 +281,17 @@ $ npm install webpack webpack-cli --save-dev
   }
 }
 ```
-
-@snapend
-
 ---
 
 @snap[north-west]
-
 ```
 $ ./node_modules/.bin/webpack index.js --mode=development
 ```
-
 @snapend
 
 @snap[midpoint]
-
 This command will run the webpack tool that was installed in the _node_modules_ folder start with the index.js file, find any require statements, and replace them with the appropriate code to create a single output file (which by default is dist/main.js).
-
-## @snapend
+@snapend
 
 ```HTML
 <!-- index.html -->
