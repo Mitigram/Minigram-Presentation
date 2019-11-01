@@ -503,7 +503,7 @@ mycar = new Car("Ford");
 
 // String interpolation
 var name = "Bob", time = "today";
-`Hello ${name}, how are you ${time}?`
+console.log(`Hello ${name}, how are you ${time}?`)
 ```
 @snapend
 
@@ -544,7 +544,7 @@ ws.add({ data: 42 });
 ---
 
 @snap[north]
-### Default + Rest + Spread
+#### Default + Rest + Spread
 @snapend
 
 @snap[midpoint span-80 text-06]
@@ -638,7 +638,7 @@ alert("2π = " + sum(pi, pi));
 - Multiple scripts can be concatenated thereby increasing performance.
 - Debugging becomes easier.
 - Any code referencing a module understands it is a dependency. If the module file is changed or moved, the problem is immediately obvious.
-- Modules (usually) helps eradicate naming conflicts. Function sumAll() in module1 cannot clash with Function sumAll() in module2. Aliases are very useful here, it becomes module1.sumAll() and module2.sumAll().
+- Modules (usually) helps eradicate naming conflicts. Function _sumAll()_ in _module1_ cannot clash with Function _sumAll()_ in _module2_. Aliases are very useful here, it becomes _module1.sumAll()_ and _module2.sumAll()_.
 - ES6 Modules are always executed in strict mode, so there is no need for ‘use strict’ .
 - ES6 modules help you to organize your code better
 @ulend
@@ -646,11 +646,15 @@ alert("2π = " + sum(pi, pi));
 
 ---
 
-### Notable features
+### Notable features ECMAScript 2016-2019
 
-#### ECMAScript 2016-2019 ...
+---
 
-### ES2016 - Array.prototype.includes
+@snap[north]
+#### ES2016 - Array.prototype.includes
+@snapend
+
+@snap[midpoint span-80 text-06]
 
 ```JavaScript
 [1, 2, 3].includes(-1)                   // false
@@ -661,8 +665,15 @@ alert("2π = " + sum(pi, pi));
 ['foo', 'bar', 'quux'].includes('foo')   // true
 ['foo', 'bar', 'quux'].includes('norf')  // false
 ```
+@snapend
 
-### ES2017 -- async await
+---
+
+@snap[north]
+#### ES2017 -- async await
+@snapend
+
+@snap[midpoint span-80 text-06]
 
 An asynchronous function is a function which operates asynchronously via the event loop, using an implicit Promise to return its result.
 
@@ -685,8 +696,15 @@ async function asyncCall() {
 asyncCall();
 
 ```
+@snapend
 
-### ES2018 -- Promise prototype finally
+---
+
+@snap[north]
+#### ES2018 -- Promise prototype finally
+@snapend
+
+@snap[midpoint span-80 text-06]
 
 Promise API is extended by an optional finally block which is called in any case (after the Promise is resolved or is rejected).
 
@@ -701,9 +719,16 @@ testFinally().then(() => console.debug("resolved")).finally(() => console.debug(
 
 ```
 
-### ES2019 -- Array.prototype.{flat,flatMap}
+@snapend
 
-The flat() method enables you to easily concatenate all sub-array elements of an array.
+---
+
+@snap[north]
+#### ES2019 -- Array.prototype.{flat,flatMap}
+@snapend
+
+@snap[midpoint span-80 text-06]
+The _flat()_ method enables you to easily concatenate all sub-array elements of an array.
 
 ```JavaScript
 let arr = ['a', 'b', ['c', 'd']];
@@ -716,42 +741,83 @@ const arr = [4.25, 19.99, [25.5]];
 console.log(arr.flatMap(value => [Math.round(value)]));
 // => [4, 20, 26]
 ```
+@snapend
 
-### ES2019 -- Object.fromEntries
+---
 
+@snap[north]
+#### ES2019 -- Object.fromEntries
+@snapend
+
+@snap[midpoint span-80 text-06]
+
+```JavaScript
 const myArray = [['one', 1], ['two', 2], ['three', 3]];
 const obj = Object.fromEntries(myArray);
 
 console.log(obj); // => {one: 1, two: 2, three: 3}
-
-### ... and more
-
-https://www.w3schools.com/js/js_es6.asp
-https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2015.MD
-
-### Using TypeScript
-
-- CoffeeScript - 2010 - http://coffeescript.org/
-- TypeScript - 2012 - https://www.typescriptlang.org
-- babel - 2014 - https://babeljs.io/
+```
+@snapend
 
 ---
 
-### TypeScript
+@snap[north]
+#### ... and more
+@snapend
 
-TypeScript is a subset of JavaScript
+@snap[midpoint span-80 text-06]
+https://www.w3schools.com/js/js_es6.asp
+https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2015.MD
+@snapend
+
+---
+
+@snap[north]
+#### Transpiling
+@snapend
+
+@snap[midpoint span-80 text-06]
+
+Transpiling code means converting the code in one language to code in another similar language.
+@ul
+- CoffeeScript - 2010 - http://coffeescript.org/
+- TypeScript - 2012 - https://www.typescriptlang.org
+- babel - 2014 - https://babeljs.io/
+@ulend
+@snapend
+
+---
+
+@snap[north]
+#### TypeScript
+@snapend
+
+@snap[midpoint span-80 text-06]
+@ul
+- TypeScript is a strict syntactical superset of JavaScript, and adds optional static typing to the language.
+- Provide an optional type system for JavaScript.
+- Provide planned features from future JavaScript editions to current JavaScript engines.
+- TypeScript was first made public in October 2012 (at version 0.8), after two years of internal development at Microsoft.
+- TypeScript 1.0 was released at Microsoft's Build developer conference in 2014.
+- Designed by Anders Hejlsberg.
+- The TypeScript compiler is itself written in TypeScript and compiled to JavaScript. 
+@ulend
+@snapend
+
+---
 
 https://www.typescriptlang.org/play/
 
 ---
 
-### Type annotations
+@snap[north]
+#### Type annotations
+@snapend
 
+@snap[midpoint span-80 text-06]
 ```TypeScript
 /// greeter.ts
-function greeter(person: string) {
-    return "Hello, " + person;
-}
+greeter(person: string) => "Hello, " + person;
 
 let user = "Slim Dady";
 
@@ -761,6 +827,7 @@ console.log(greeter(user));
 ```
 tsc greeter.ts
 ```
+@snapend
 
 ---
 
