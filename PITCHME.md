@@ -232,7 +232,7 @@ using TypeLess;
 @ulend
 @snapend
 
----?color=linear-gradient(180deg, white 50%, #E71E60 50%)
+---?color=linear-gradient(180deg, white 50%, #718C00 50%)
 
 @snap[north span-85]
 ![IMAGE](assets/img/nodejs.png)
