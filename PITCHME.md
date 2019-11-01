@@ -192,7 +192,11 @@ The bad thing is right now we’re digging through the **node_modules** folder t
 
 ### Using a JavaScript module bundler
 
+@snap[west span-40 text-08]
 Most programming languages, provide a way to import code from one file into another.
+@snapend
+
+@snap[east span-40 text-08]
 
 ```csharp
 using App.Application.Contracts;
@@ -204,6 +208,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using TypeLess;
 ```
+@snapend
 
 ---
 
