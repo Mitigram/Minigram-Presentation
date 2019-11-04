@@ -1015,7 +1015,7 @@ $ ./node_modules/.bin/webpack
 ---
 
 @snap[north]
-#### Modern Frontend libraries and frameworks
+#### Modern frontend libraries and frameworks
 @snapend
 
 @snap[midpoint span-80 text-06]
