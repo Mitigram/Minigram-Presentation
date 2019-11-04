@@ -293,14 +293,14 @@ $ npm install webpack webpack-cli --save-dev
 ```
 ---
 
-@snap[north]
+@snap[north span-80]
 ```
 $ ./node_modules/.bin/webpack index.js --mode=development
 ```
 @snapend
 
 @snap[midpoint span-50 text-07]
-This command will run the webpack tool that was installed in the _node_modules_ folder start with the index.js file, find any require statements, and replace them with the appropriate code to create a single output file (which by default is dist/main.js).
+This command will run the webpack tool that was installed in the _node_modules_ folder start with the index.js file, find any require statements, and replace them with the appropriate code to create a single output file (which by default is _dist/main.js_).
 @snapend
 
 ---
@@ -321,16 +321,20 @@ This command will run the webpack tool that was installed in the _node_modules_ 
 ```
 ---
 
+@snap[north span-80]
 ```
 $ ./node_modules/.bin/webpack index.js --mode=development
 ```
-@snap[south span-50 text-07]
+@snapend
+
+@snap[midpoint span-50 text-07]
 Note that we’ll need to run the webpack command each time we change _index.js_.
 This is tedious, and will get even more tedious as we use webpack’s more advanced features like generating source maps.
 @snapend
 
 ---
 
+@snap[north]
 ```JavaScript
 // webpack.config.js
 module.exports = {
@@ -342,10 +346,13 @@ module.exports = {
   }
 };
 ```
+@snapend
 
+@snap[midpoint span-50 text-07]
 ```
 $ ./node_modules/.bin/webpack
 ```
+@snapend
 
 ---
 
@@ -390,14 +397,14 @@ $ ./node_modules/.bin/webpack
 #### Browser support
 @snapend
 
-@snap[midpoint span-80 text-04]
+@snap[midpoint span-80 text-06]
 @ul
 - ECMAScript 3 is fully supported in all browsers.
 - ECMAScript 5 is fully supported in all modern browsers (https://caniuse.com/#feat=es5) .
 - JavaScript has had modules for a long time implemented via libraries (require.js), not built into the language.
 - ES6 is the first time that JavaScript has built-in modules.
 - Safari 10 and Edge 14 were the first browsers to fully support ES6 (https://caniuse.com/#feat=es6).
-- Internet Explorer does not support ES6.
+- Surprise, surprise... *Internet Explorer does not support ES6*. :-(
 - Chrome 68 and Opera 55 support ES7.
 @ulend
 @snapend
@@ -414,9 +421,9 @@ $ ./node_modules/.bin/webpack
 @snapend
 
 @snap[midpoint span-80 text-06]
-The let statement allows you to declare a variable with block scope.
+The *let* statement allows you to declare a variable with block scope.
 
-Constants are similar to let variables, except that the value cannot be changed.
+*Constants* are similar to let variables, except that the value cannot be changed.
 
 ```JavaScript
 function f() {
@@ -482,7 +489,7 @@ class Car {
     this.carname = brand;
   }
 }
-mycar = new Car("Ford");
+mycar = new Car("Saab");
 ```
 @snapend
 
@@ -493,7 +500,7 @@ mycar = new Car("Ford");
 @snapend
 
 @snap[midpoint span-80 text-06]
-```JavaScript
+```TypeScript
 // Basic literal string creation
 `In JavaScript '\n' is a line-feed.`
 
@@ -548,7 +555,10 @@ ws.add({ data: 42 });
 @snapend
 
 @snap[midpoint span-80 text-06]
-Callee-evaluated default parameter values. Turn an array into consecutive arguments in a function call. Bind trailing parameters to an array. Rest replaces the need for arguments and addresses common cases more directly.
+Callee-evaluated default parameter values. 
+Turn an array into consecutive arguments in a function call. 
+Bind trailing parameters to an array. 
+Rest replaces the need for arguments and addresses common cases more directly.
 
 ```JavaScript
 function f(x, y=12) {
@@ -578,7 +588,7 @@ f(...[1,2,3]) == 6
 @snap[midpoint span-80 text-06]
 Promises are a library for asynchronous programming. 
 Promises are a first class representation of a value that may be made available in the future. 
-Promises are used in many existing JavaScript libraries.
+Promises are used in many existing JavaScript libraries like jQuery.
 
 ```JavaScript
 function timeout(duration = 0) {
@@ -638,7 +648,7 @@ alert("2π = " + sum(pi, pi));
 - Multiple scripts can be concatenated thereby increasing performance.
 - Debugging becomes easier.
 - Any code referencing a module understands it is a dependency. If the module file is changed or moved, the problem is immediately obvious.
-- Modules (usually) helps eradicate naming conflicts. Function _sumAll()_ in _module1_ cannot clash with Function _sumAll()_ in _module2_. Aliases are very useful here, it becomes _module1.sumAll()_ and _module2.sumAll()_.
+- Modules (usually) helps eradicate naming conflicts. Function _sumAll()_ in _module1_ cannot clash with function _sumAll()_ in _module2_. Aliases are very useful here, it becomes _module1.sumAll()_ and _module2.sumAll()_.
 - ES6 Modules are always executed in strict mode, so there is no need for ‘use strict’ .
 - ES6 modules help you to organize your code better
 @ulend
@@ -670,7 +680,7 @@ alert("2π = " + sum(pi, pi));
 ---
 
 @snap[north]
-#### ES2017 -- async await
+#### ES2017 - async await
 @snapend
 
 @snap[midpoint span-80 text-06]
@@ -831,7 +841,11 @@ tsc greeter.ts
 
 ---
 
+@snap[north]
 ### Interfaces
+@snapend
+
+@snap[midpoint span-80 text-06]
 
 ```TypeScript
 interface Person {
@@ -843,48 +857,61 @@ function greeter(person: Person) {
     return "Hello, " + person.firstName + " " + person.lastName;
 }
 
-let user = { firstName: "Jane", lastName: "User" };
+let user = { firstName: "Slim", lastName: "Dady" };
 
 console.log(greeter(user));
 ```
 
+@snapend
+
 ---
 
+@snap[north]
 ### Classes
+@snapend
+
+@snap[midpoint span-80 text-06]
 
 ```TypeScript
-class Student {
+class Cop {
     fullName: string;
     constructor(public firstName: string, public middleInitial: string, public lastName: string) {
         this.fullName = firstName + " " + middleInitial + " " + lastName;
     }
 }
 
-interface Person {
+interface Cop {
     firstName: string;
     lastName: string;
 }
 
-function greeter(person: Person) {
+function greeter(person: Cop) {
     return "Hello, " + person.firstName + " " + person.lastName;
 }
 
-let user = new Student("Jane", "M.", "User");
+let copDog = new Cop("Dog", "M.", "Cop");
 
-console.log(greeter(user));
+console.log(greeter(copDog));
 ```
 
+@snapend
+
 ---
-
+@snap[north]
 ### Using TypeScript with Webpack
+@snapend
 
+@snap[midpoint span-80 text-06]
+
+```
 npm install -g typescript
+```
 
 ```
 $ npm install --save-dev typescript ts-loader source-map-loader
 ```
 
-tsconfig.json
+*tsconfig.json*
 
 ```JSON
 {
@@ -897,12 +924,13 @@ tsconfig.json
     }
 }
 ```
+@snapend
 
 ---
-
-webpack.config.js
+@snap[midpoint span-80 text-06]
 
 ```JavaScript
+// webpack.config.js
 module.exports = {
     mode: "production",
 
@@ -939,10 +967,20 @@ module.exports = {
 ```
 $ ./node_modules/.bin/webpack
 ```
+@snapend
 
 ---
 
-### Demo
+@snap[north]
+### Demo Time
+@snapend
+
+@snap[midpoint span-80 text-06]
+
+![IMAGE](assets/img/works-on-my-machine-border)
+
+@snapend
+---
 
 #### TypeScript project with webpack
 
