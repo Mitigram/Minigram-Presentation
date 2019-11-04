@@ -898,7 +898,7 @@ console.log(greeter(copDog));
 
 ---
 @snap[north]
-### Using TypeScript with Webpack
+#### Using TypeScript with Webpack
 @snapend
 
 @snap[midpoint span-80 text-06]
@@ -977,7 +977,7 @@ $ ./node_modules/.bin/webpack
 
 @snap[midpoint span-80 text-06]
 
-![IMAGE](assets/img/works-on-my-machine-border)
+![IMAGE](assets/img/works-on-my-machine-border.png)
 
 @snapend
 ---
