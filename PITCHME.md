@@ -979,7 +979,7 @@ $ ./node_modules/.bin/webpack
 #### TypeScript project with webpack
 @snapend
 
-@snap[midpoint span-80 text-06]
+@snap[midpoint span-40 text-06]
 
 ![IMAGE](assets/img/works-on-my-machine-border.png)
 
@@ -988,7 +988,7 @@ $ ./node_modules/.bin/webpack
 ---
 
 @snap[north]
-### Frontend libraries and frameworks
+#### Frontend libraries
 @snapend
 
 @snap[midpoint span-80 text-06]
@@ -1014,41 +1014,103 @@ $ ./node_modules/.bin/webpack
 
 ---
 
-### Modern Frontend libraries and frameworks
+@snap[north]
+#### Modern Frontend libraries and frameworks
+@snapend
 
+@snap[midpoint span-80 text-06]
+@ul
 - Single Page App
-- Webpack
+- webpack
 - CLI
 - Babel and TypeScript
-- Virtual DOM, Shadow DOM,
-- Data-driven templates (JSX)
+- Virtual DOM
+- Data-driven templates (like JSX)
 - Redux
-
-### Virtual DOM
-
-Every component creates a new virtual DOM tree every time it gets rerendered. React compares the new virtual DOM tree with the old one and then applies a series of transformations to the browser DOM to match the new virtual DOM tree.
-
-## Incremental DOM
-
-Every component gets compiled into a series of instructions. These instructions create DOM trees and update them in-place when the data changes.
-
-###
+- SSR - server side rendering
+@ulend
+@snapend
 
 ---
 
-### React
+@snap[north]
+#### Don't *EVER* touch the DOM
+@snapend
+
+@snap[midpoint span-80 text-06]
+@ul
+- Layout thrashing and browser must redraw which is expensive
+- Jank
+- Kills performance and drains battery on lower-end devices
+- Prevents from using another underlying rendring system
+- Does not play well with SSR, because there is no DOM on the server
+@ulend
+@snapend
+
+---
+
+@snap[north]
+#### Virtual DOM
+@snapend
+
+@snap[midpoint span-80 text-06]
+Every component creates a new virtual DOM tree every time it gets rerendered. 
+React compares the new virtual DOM tree with the old one and then applies a series of transformations to the browser DOM to match the new virtual DOM tree.
+We can use any programming language to implement the component’s render function, so we don’t need to compile anything. React developers mainly uses JSX, but we can use plain JavaScript as well.
+We get a value as a result of rendering component. It can be used for testing, debugging, etc..
+
+![IMAGE](assets/img/vdom.png)
+@snapend
+
+---
+
+![IMAGE](assets/img/vdom.gif)
+
+---
+
+@snap[north]
+#### Incremental DOM
+@snapend
+
+@snap[midpoint span-80 text-06]
+Every component gets compiled into a series of instructions. These instructions create DOM trees and update them in-place when the data changes.
+Virtual DOM requires an interpreter. What part of that interpreter is needed and what part is not isn’t known at compile time, so we have to ship the whole thing to the browser.
+Applications have to perform well on mobile devices. This mainly meant optimizing two things: the bundle size and the memory footprint.
+The rendering engine itself has to be tree shakable
+The rendering engine has to have low memory footprint
+@snapend
+
+---
+
+@snap[midpoint span-80 text-06]
+![IMAGE](assets/img/vdom-render.png)
+
+![IMAGE](assets/img/idom-render.png)
+
+@snapend
+
+---
+
+@snap[north]
+#### React
+@snapend
+
+@snap[midpoint span-80 text-06]
 
 React is a JavaScript library developed and maintained by Facebook.
 
+@ul
 JSX + JS (ES5/ES6)
 Virtual DOM
 Unidirectionl binding / one way data flow e.g. Redux
 No dependency injection
 Fetch for HTTP requests
 Template, logic in one file
-
+@ulend
+@snapend
 ---
 
+@snap[midpoint span-80 text-06]
 ```JavaScript
 ReactDOM.render(
   <h1>Hello, world!</h1>,
@@ -1057,7 +1119,7 @@ ReactDOM.render(
 ```
 
 ```JavaScript
-const name = 'Josh Perez';
+const name = 'Slim Dady';
 const element = <h1>Hello, {name}</h1>;
 
 ReactDOM.render(
@@ -1188,18 +1250,6 @@ ng new angularElements
 ```
 ng add @angular/elements
 ```
-
----
-
-```
-ng new angularElements
-```
-
-```
-ng add @angular/elements
-```
-
----
 
 ## Add Some Slide Candy
 
