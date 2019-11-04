@@ -971,8 +971,12 @@ $ ./node_modules/.bin/webpack
 
 ---
 
-@snap[north]
 ### Demo Time
+
+---
+
+@snap[north]
+#### TypeScript project with webpack
 @snapend
 
 @snap[midpoint span-80 text-06]
@@ -980,14 +984,15 @@ $ ./node_modules/.bin/webpack
 ![IMAGE](assets/img/works-on-my-machine-border.png)
 
 @snapend
----
-
-#### TypeScript project with webpack
 
 ---
 
+@snap[north]
 ### Frontend libraries and frameworks
+@snapend
 
+@snap[midpoint span-80 text-06]
+@ul
 - 2005 Prototype
 - 2005 Dojo
 - 2006 jQuery
@@ -1004,6 +1009,8 @@ $ ./node_modules/.bin/webpack
 - 2014 Vue
 - 2016 Angular
 - 2016 Svelte
+@ulend
+@snapend
 
 ---
 
