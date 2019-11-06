@@ -1221,6 +1221,13 @@ https://stackblitz.com/
 
 ---
 
+
+
+
+---
+
+
+
 Web components
 
 1. HTML Template: The overall template of a web component. Angular has ng template, sort of similar.
