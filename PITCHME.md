@@ -11,7 +11,7 @@
 
 @snap[west span-55]
 @ul[list-spaced-bullets text-white text-04]
-- Current state of Mitigram
+- Current state of Mitigram Web
 - Modern JavaScript
 - ES2015 (ES6) and beyond...
 - TypeScript
@@ -27,6 +27,24 @@
 
 @snap[east span-45]
 @img[shadow](assets/img/JSLogo.png)
+@snapend
+
+---?color=#000
+
+@snap[north span-40 text-white]
+#### The current state of Mitigram Web
+@snapend
+
+@snap[midpoint]
+![IMAGE](assets/img/spagbol.png)
+@snapend
+
+---
+
+---?color=#000
+
+@snap[midpoint]
+![IMAGE](assets/img/turn-your-spaghetti-code-into-ravioli-with-javascript-modules-7-638.png)
 @snapend
 
 ---
