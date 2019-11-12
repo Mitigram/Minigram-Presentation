@@ -18,9 +18,9 @@
 - Package management, bundling, task runners and transpiling
 - Frontend libraries and frameworks
 - Minigram project - React, Vue, Angular
-- Redux and virtual DOM
+- Virtual DOM, Incremental DOM and Redux
 - Feature comparison and discussion
-- Bring Mitigram in to the modern era
+- Bringing Mitigram Web into the modern era
 - Web Components
 @ulend
 @snapend
@@ -327,20 +327,20 @@ This command will run the webpack tool that was installed in the _node_modules_ 
 ```
 ---
 
-@snap[north span-80]
+@snap[north-east span-80]
 ```
 $ ./node_modules/.bin/webpack index.js --mode=development
 ```
 @snapend
 
-@snap[midpoint span-50 text-07]
+@snap[east span-50 text-07]
 Note that we’ll need to run the webpack command each time we change _index.js_.
 This is tedious, and will get even more tedious as we use webpack’s more advanced features like generating source maps.
 @snapend
 
 ---
 
-@snap[north]
+@snap[north-east]
 ```JavaScript
 // webpack.config.js
 module.exports = {
@@ -354,7 +354,7 @@ module.exports = {
 ```
 @snapend
 
-@snap[midpoint span-50 text-07]
+@snap[east span-50 text-07]
 ```
 $ ./node_modules/.bin/webpack
 ```
@@ -1059,14 +1059,15 @@ $ ./node_modules/.bin/webpack
 ---
 
 @snap[north]
-#### Virtual DOM (React, VUE)
+#### Virtual DOM (React, Vue)
 @snapend
 
 @snap[midpoint span-80 text-06]
 @ul
 - Every component creates a new virtual DOM tree every time it gets rerendered. 
 - React compares the new virtual DOM tree with the old one and then applies a series of transformations to the browser DOM to match the new virtual DOM tree.
-- We can use any programming language to implement the component’s render function, so we don’t need to compile anything. - React developers mainly uses JSX, but we can use plain JavaScript as well.
+- We can use any programming language to implement the component’s render function, so we don’t need to compile anything.
+- React developers mainly uses JSX, but we can use plain JavaScript as well.
 - We get a value as a result of rendering component. It can be used for testing, debugging, etc..
 @ulend
 
@@ -1094,6 +1095,22 @@ $ ./node_modules/.bin/webpack
 @snapend
 
 ---
+
+
+@snap[north]
+#### Redux
+@snapend
+
+@snap[midpoint span-80 text-06]
+@ul
+- An isolated test that only focuses on the component’s class.
+- The shadow test that focuses on the component’s class and its template, without its dependencies by mocking them.
+- An integrated test will test the component and its dependencies as a whole.
+@ulend
+@snapend
+
+---
+
 
 @snap[midpoint span-80 text-06]
 ![IMAGE](assets/img/vdom-render.png)
@@ -1195,6 +1212,7 @@ Angular is a fully-fledged MVC framework written in TypeScript
 - Dependency injection
 - CSS encapsulation
 - Template, logic and styles in separate files
+- RxJS
 - HTTP request module (Fetch with fallback to XHR)
 - Routing
 - Form building
@@ -1242,6 +1260,8 @@ https://stackblitz.com/
 <h1>Hello {name}!</h1>
 ```
 
+---
+
 @snap[north]
 #### Minigram
 @snapend
@@ -1259,6 +1279,8 @@ https://stackblitz.com/
 @snapend
 
 ---
+
+
 
 @snap[north]
 #### Component Testing (with Angular)
@@ -1341,7 +1363,20 @@ ng add @angular/elements
 #### Conslusion
 @snapend
 
-@snap[midpoint span-80 text-06]
+@snap[west span-80 text-06]
+@ul
+- React and Vue
+- No native Typescript support but can be added (Vue 3 is written in TS)
+- Angular allows for 
+- Dependices are updated infrequently, may be abonondon and needs replacement
+- Lower learning curve
+- 
+
+
+@ulend
+@snapend
+
+@snap[east span-80 text-06]
 @ul
 - React and Vue are libra and surrounding code
 - No native Typescript support but can be added (Vue 3 is written in TS)
