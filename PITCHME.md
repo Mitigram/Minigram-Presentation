@@ -31,20 +31,8 @@
 
 ---?color=#000
 
-@snap[north span-40 text-white]
-#### The current state of Mitigram Web
-@snapend
-
 @snap[midpoint]
-![IMAGE](assets/img/spagbol.png)
-@snapend
-
----
-
----?color=#000
-
-@snap[midpoint]
-![IMAGE](assets/img/turn-your-spaghetti-code-into-ravioli-with-javascript-modules-7-638.png)
+The current state of Mitigram Web
 @snapend
 
 ---
@@ -1017,6 +1005,7 @@ $ ./node_modules/.bin/webpack
 - 2006 Microsoft ASP.NET Ajax (Atlas)
 - 2006 YUI Library
 - 2007 MooTools
+- 2007 GWT
 - 2007 jQuery UI
 - 2010 KnockoutJS
 - 2010 Backbone.js
@@ -1027,6 +1016,7 @@ $ ./node_modules/.bin/webpack
 - 2014 Vue
 - 2016 Angular
 - 2016 Svelte
+- 2020 Blazor WebAssembly
 @ulend
 @snapend
 
@@ -1038,14 +1028,15 @@ $ ./node_modules/.bin/webpack
 
 @snap[midpoint span-80 text-06]
 @ul
-- Single Page App
+- Single Page App / PWA
 - webpack
 - CLI
 - Babel and TypeScript
 - Virtual DOM
+- Scoped CSS
 - Data-driven templates (like JSX)
 - Redux
-- SSR - server side rendering
+- SSR - server-side rendering
 @ulend
 @snapend
 
@@ -1058,24 +1049,26 @@ $ ./node_modules/.bin/webpack
 @snap[midpoint span-80 text-06]
 @ul
 - Layout thrashing and browser must redraw which is expensive
-- Jank
 - Kills performance and drains battery on lower-end devices
-- Prevents from using another underlying rendring system
-- Does not play well with SSR, because there is no DOM on the server
+- Jank - we want 60 fps!
+- Prevents from using another underlying rendering system (eg. native rendering)
+- For example does not play well with SSR, because there is no DOM on the server
 @ulend
 @snapend
 
 ---
 
 @snap[north]
-#### Virtual DOM
+#### Virtual DOM (React, VUE)
 @snapend
 
 @snap[midpoint span-80 text-06]
-Every component creates a new virtual DOM tree every time it gets rerendered. 
-React compares the new virtual DOM tree with the old one and then applies a series of transformations to the browser DOM to match the new virtual DOM tree.
-We can use any programming language to implement the component’s render function, so we don’t need to compile anything. React developers mainly uses JSX, but we can use plain JavaScript as well.
-We get a value as a result of rendering component. It can be used for testing, debugging, etc..
+@ul
+- Every component creates a new virtual DOM tree every time it gets rerendered. 
+- React compares the new virtual DOM tree with the old one and then applies a series of transformations to the browser DOM to match the new virtual DOM tree.
+- We can use any programming language to implement the component’s render function, so we don’t need to compile anything. - React developers mainly uses JSX, but we can use plain JavaScript as well.
+- We get a value as a result of rendering component. It can be used for testing, debugging, etc..
+@ulend
 
 ![IMAGE](assets/img/vdom.png)
 @snapend
@@ -1087,15 +1080,17 @@ We get a value as a result of rendering component. It can be used for testing, d
 ---
 
 @snap[north]
-#### Incremental DOM
+#### Incremental DOM 
 @snapend
 
 @snap[midpoint span-80 text-06]
-Every component gets compiled into a series of instructions. These instructions create DOM trees and update them in-place when the data changes.
-Virtual DOM requires an interpreter. What part of that interpreter is needed and what part is not isn’t known at compile time, so we have to ship the whole thing to the browser.
-Applications have to perform well on mobile devices. This mainly meant optimizing two things: the bundle size and the memory footprint.
-The rendering engine itself has to be tree shakable
-The rendering engine has to have low memory footprint
+@ul
+- Every component gets compiled into a series of instructions. These instructions create DOM trees and update them in-place when the data changes.
+- Virtual DOM requires an interpreter. What part of that interpreter is needed and what part is not isn’t known at compile time, so we have to ship the whole thing to the browser.
+- Applications have to perform well on mobile devices. This mainly meant optimizing two things: the bundle size and the memory footprint.
+- The rendering engine itself has to be tree shakable
+- The rendering engine has to have low memory footprint
+@ulend
 @snapend
 
 ---
@@ -1119,45 +1114,53 @@ React is a JavaScript library developed and maintained by Facebook.
 
 @ul
 JSX + JS (ES5/ES6)
-Virtual DOM
-Unidirectionl binding / one way data flow e.g. Redux
-No dependency injection
-Fetch for HTTP requests
-Template, logic in one file
+- Virtual DOM
+- Unidirectionl binding / one way data flow e.g. Redux
+- No dependency injection
+- Fetch for HTTP requests
+- Template, logic in one file
 @ulend
 @snapend
+
 ---
 
 @snap[midpoint span-80 text-06]
 ```JavaScript
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <h1>Hello, Slim Dady!</h1>,
   document.getElementById('root')
 );
 ```
 
 ```JavaScript
 const name = 'Slim Dady';
-const element = <h1>Hello, {name}</h1>;
+const element = <h1>Hello {name}</h1>;
 
 ReactDOM.render(
   element,
   document.getElementById('root')
 );
 ```
+@snapend
 
 ---
 
-### Vue
+@snap[north]
+#### Vue
+@snapend
 
-Two-way databinding
-Templates
-Directives
-Mixins
-Routing
-CSS encapsulation
-Fetch for HTTP requests
-Template, logic and styles in one file
+@snap[midpoint span-80 text-06]
+@ul
+- Two-way databinding
+- Templates
+- Directives
+- Mixins
+- Routing
+- CSS encapsulation
+- Fetch for HTTP requests
+- Template, logic and styles in one file
+@ulend
+@snapend
 
 ---
 
@@ -1171,28 +1174,34 @@ Template, logic and styles in one file
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue!'
+    message: 'Hello Slim Dady!'
   }
 })
 ```
 
 ---
 
-### Angular
+@snap[north]
+#### Angular
+@snapend
 
+@snap[midpoint span-80 text-06]
 Angular is a fully-fledged MVC framework written in TypeScript
 
-Two-way databinding
-Templates
-Directives
-Dependency injection
-HTTP requests
-Routing
-CSS encapsulation
-Form building
-Template, logic and styles in separate files
-Schematics
-Angular Elements
+@ul
+- Two-way databinding
+- Templates
+- Directives
+- Dependency injection
+- CSS encapsulation
+- Template, logic and styles in separate files
+- HTTP request module (Fetch with fallback to XHR)
+- Routing
+- Form building
+- Schematics
+- Angular Elements
+@ulend
+@snapend
 
 ---
 
@@ -1221,19 +1230,62 @@ https://stackblitz.com/
 
 ---
 
+@snap[north]
+### Svelte
+
+```HTML
+<script>
+	let name = 'Slim Dady';
+</script>
 
 
+<h1>Hello {name}!</h1>
+```
+
+@snap[north]
+#### Minigram
+@snapend
+
+@snap[midpoint span-80 text-06]
+@ul
+- Small clone of Mitigram with limited functionality
+- Written in React, Vue and Angular for comparison
+- User authentication with fake backend
+- Semantic UI
+- Kendo UI (Charts, Modals and everyone's favorite - the Grid)
+- Routing
+- Redux for authentication
+@ulend
+@snapend
 
 ---
 
+@snap[north]
+#### Component Testing (with Angular)
+@snapend
 
+@snap[midpoint span-80 text-06]
+@ul
+- An isolated test that only focuses on the component’s class.
+- The shadow test that focuses on the component’s class and its template, without its dependencies by mocking them.
+- An integrated test will test the component and its dependencies as a whole.
+@ulend
+@snapend
 
-Web components
+---
 
-1. HTML Template: The overall template of a web component. Angular has ng template, sort of similar.
-2. Shadow DOM: Maintain a DOM in memory, but not on the main DOM. Great for performance.
-3. HTML Imports: Import/export reusable bits of HTML. Hardly anyone uses it.
-4. Custom Elements: Ability to add to the vernacular of HTML, basically allows you to define a web component.
+@snap[north]
+#### Web components
+@snapend
+
+@snap[midpoint span-80 text-06]
+@ol
+- *HTML Template*: The overall template of a web component. Angular has ng template, sort of similar.
+- *Shadow DOM*: Maintain a DOM in memory, but not on the main DOM. Great for performance.
+- *HTML Imports*: Import/export reusable bits of HTML. Hardly anyone uses it.
+- *Custom Elements*: Ability to add to the vernacular of HTML, basically allows you to define a web component.
+@olend
+@snapend
 
 ---
 
@@ -1253,21 +1305,29 @@ attributeChangedCallback(oldvalue, newvalue, key) {}}
 ```
 
 ---
+@snap[north]
+#### Angular Elements
+@snapend
 
-###Angular Elements
-
-Angular Elements are simply an Angular component, packaged as a Web Component.
-
----
-
-Self-boot strapping: Drop on a page, and it works. Unlike full Angular, they don’t need complex boot strapping logic.
-Hosts an Angular component inside a web component
-Provides a bridge from angular concepts to web components. @Inputs() become properties. @Outputs become events. @HostBinding/Listener become CE attributes/Observed attributes.
-Zones are not needed.
-Angular on the inside, standards on the outside … SO … they can work and play well with basic HTML and other stacks!!!!
+@snap[midpoint span-80 text-06]
+Angular Elements are simply an Angular component, but packaged as a Web Component.
+@snapend
 
 ---
 
+@snap[midpoint span-80 text-06]
+@ul
+- Self-boot strapping: Drop on a page, and it works. Unlike full Angular, they don’t need complex boot strapping logic.
+- Hosts an Angular component inside a web component
+- Provides a bridge from angular concepts to web components.
+- Zones are not needed.
+- Angular on the inside, standards on the outside … SO … they can work and play well with basic HTML and any other existing project!
+@ulend
+@snapend
+
+---
+
+@snap[midpoint span-80 text-06]
 ```
 ng new angularElements
 ```
@@ -1275,6 +1335,23 @@ ng new angularElements
 ```
 ng add @angular/elements
 ```
+@snapend
+
+@snap[north]
+#### Conslusion
+@snapend
+
+@snap[midpoint span-80 text-06]
+@ul
+- React and Vue are libra and surrounding code
+- No native Typescript support but can be added (Vue 3 is written in TS)
+- Angular allows for 
+- Dependices are updated infrequently, may be abonondon and needs replacement
+
+
+
+@ulend
+@snapend
 
 ## Add Some Slide Candy
 
