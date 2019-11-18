@@ -340,7 +340,7 @@ This is tedious, and will get even more tedious as we use webpack’s more advan
 
 ---
 
-@snap[north-west]
+@snap[midpoint]
 ```JavaScript
 // webpack.config.js
 module.exports = {
@@ -352,9 +352,7 @@ module.exports = {
   }
 };
 ```
-@snapend
 
-@snap[midpoint span-80]
 ```
 $ ./node_modules/.bin/webpack
 ```
@@ -814,7 +812,7 @@ Transpiling code means converting the code in one language to code in another si
 - Provide an optional type system for JavaScript.
 - Provide planned features from future JavaScript editions to current JavaScript engines.
 - TypeScript was first made public in October 2012 (at version 0.8), after two years of internal development at Microsoft.
-- TypeScript 1.0 was released at Microsoft's Build developer conference in 2014.
+- TypeScript 1.0 was released at Build 2014.
 - Designed by Anders Hejlsberg.
 - The TypeScript compiler is itself written in TypeScript and compiled to JavaScript. 
 @ulend
@@ -848,7 +846,7 @@ tsc greeter.ts
 ---
 
 @snap[north]
-### Interfaces
+#### Interfaces
 @snapend
 
 @snap[midpoint span-80 text-06]
@@ -873,7 +871,7 @@ console.log(greeter(user));
 ---
 
 @snap[north]
-### Classes
+#### Classes
 @snapend
 
 @snap[midpoint span-80 text-06]
@@ -997,7 +995,7 @@ $ ./node_modules/.bin/webpack
 #### Frontend libraries
 @snapend
 
-@snap[midpoint span-80 text-06]
+@snap[midpoint span-80 text-05]
 @ul
 - 2005 Prototype
 - 2005 Dojo
@@ -1059,11 +1057,12 @@ $ ./node_modules/.bin/webpack
 ---
 
 @snap[north]
-#### Virtual DOM (React, Vue)
+#### Virtual DOM
 @snapend
 
-@snap[midpoint span-80 text-06]
+@snap[midpoint span-80 text-05]
 @ul
+- React and Vue
 - Every component creates a new virtual DOM tree every time it gets rerendered. 
 - React compares the new virtual DOM tree with the old one and then applies a series of transformations to the browser DOM to match the new virtual DOM tree.
 - We can use any programming language to implement the component’s render function, so we don’t need to compile anything.
@@ -1086,6 +1085,7 @@ $ ./node_modules/.bin/webpack
 
 @snap[midpoint span-80 text-06]
 @ul
+- Svelte and Angular 9
 - Every component gets compiled into a series of instructions. These instructions create DOM trees and update them in-place when the data changes.
 - Virtual DOM requires an interpreter. What part of that interpreter is needed and what part is not isn’t known at compile time, so we have to ship the whole thing to the browser.
 - Applications have to perform well on mobile devices. This mainly meant optimizing two things: the bundle size and the memory footprint.
@@ -1094,8 +1094,39 @@ $ ./node_modules/.bin/webpack
 @ulend
 @snapend
 
+
 ---
 
+
+@snap[midpoint span-80 text-06]
+```HTML
+<div class="foo">
+    Hello Dady!
+</div>
+```
+
+```JavaScript
+import ID from 'incremental-dom'
+
+function renderDady() {
+  ID.elementOpen('div', null, ['class', 'foo'], null);
+  ID.text('Hello Dady!');
+  ID.elementClose('div');
+}
+```
+@snapend
+
+---
+
+@snap[midpoint span-80 text-06]
+
+![IMAGE](assets/img/vdom-render.png)
+
+![IMAGE](assets/img/idom-render.png)
+
+@snapend
+
+---
 
 @snap[north]
 #### Redux
@@ -1111,26 +1142,17 @@ $ ./node_modules/.bin/webpack
 
 ---
 
-
-@snap[midpoint span-80 text-06]
-![IMAGE](assets/img/vdom-render.png)
-
-![IMAGE](assets/img/idom-render.png)
-
-@snapend
-
----
-
 @snap[north]
 #### React
 @snapend
 
 @snap[midpoint span-80 text-06]
 
-React is a JavaScript library developed and maintained by Facebook.
+A JavaScript library for building user interfaces developed and maintained by Facebook.
+https://reactjs.org/
 
-@ul
 JSX + JS (ES5/ES6)
+@ul
 - Virtual DOM
 - Unidirectionl binding / one way data flow e.g. Redux
 - No dependency injection
@@ -1167,6 +1189,10 @@ ReactDOM.render(
 @snapend
 
 @snap[midpoint span-80 text-06]
+
+Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web. 
+http://vuejs.org
+
 @ul
 - Two-way databinding
 - Templates
@@ -1204,6 +1230,7 @@ var app = new Vue({
 
 @snap[midpoint span-80 text-06]
 Angular is a fully-fledged MVC framework written in TypeScript
+https://angular.io/
 
 @ul
 - Two-way databinding
