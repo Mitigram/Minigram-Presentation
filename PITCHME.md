@@ -17,8 +17,8 @@
 - TypeScript
 - Package management, bundling, task runners and transpiling
 - Frontend libraries and frameworks
-- Minigram project - React, Vue, Angular
 - Virtual DOM, Incremental DOM and Redux
+- Minigram project - React, Vue, Angular
 - Feature comparison and discussion
 - Bringing Mitigram Web into the modern era
 - Web Components
@@ -1133,11 +1133,103 @@ function renderDady() {
 @snapend
 
 @snap[midpoint span-80 text-06]
+
+A predictable state container for JavaScript apps.
+
 @ul
-- An isolated test that only focuses on the component’s class.
-- The shadow test that focuses on the component’s class and its template, without its dependencies by mocking them.
-- An integrated test will test the component and its dependencies as a whole.
+- Redux maintains the state of an entire application in a single immutable state tree (object), which can’t be changed directly.
+- It operates in a similar fashion to a reducing function.
+- When something changes, a new object is created (using actions and reducers).
+- Redux was created by Dan Abramov around June 2015.
 @ulend
+@snapend
+
+---
+
+@snap[midpoint span-80 text-06]
+
+![IMAGE](assets/img/new-redux-data-flow-large-opt.png)
+
+@snapend
+
+---
+
+@snap[north]
+#### Actions
+@snapend
+
+@snap[midpoint span-80 text-06]
+
+Actions are events that send data from the application (user interactions, internal events such as API calls, and form submissions) to the store. 
+
+```JavaScript
+{
+    type: LOGIN_FORM_SUBMIT,
+    payload: {username: ‘dady’, password: ‘123456’}
+}
+```
+
+```JavaScript
+function authUser(form) {
+    return {
+        type: LOGIN_FORM_SUBMIT,
+        payload: form
+    }
+}
+```
+
+```JavaScript
+dispatch(authUser(form));
+```
+
+@snapend
+
+---
+
+@snap[north]
+#### Reducers
+@snapend
+
+@snap[midpoint span-80 text-06]
+
+Reducers are functions (pure) that take the current state of the application and an action and then return a new state.
+
+```JavaScript
+function handleAuth(state, action) {
+    return _.assign({}, state, {
+        auth: action.payload
+    });
+}
+```
+
+```JavaScript
+const rootReducer = combineReducers({
+    handleAuth: handleAuth,
+    editProfile: editProfile,
+    changePassword: changePassword
+});
+```
+
+@snapend
+
+---
+
+@snap[north]
+#### Store
+@snapend
+
+@snap[midpoint span-80 text-06]
+
+Store is the object that holds the application state and provides a few helper methods to access the state, dispatch actions and register listeners. The entire state is represented by a single store. 
+
+```JavaScript
+import { createStore } from ‘redux’;
+
+let store = createStore(rootReducer);
+let authInfo = {username: ‘dady’, password: ‘123456’};
+store.dispatch(authUser(authInfo));
+```
+
 @snapend
 
 ---
@@ -1276,7 +1368,13 @@ https://stackblitz.com/
 ---
 
 @snap[north]
-### Svelte
+#### Bonus: Svelte
+@snapend
+
+@snap[midpoint span-80 text-06]
+Cybernetically enhanced web apps. A radical new approach to building user interfaces
+https://svelte.dev/
+
 
 ```HTML
 <script>
@@ -1286,6 +1384,7 @@ https://stackblitz.com/
 
 <h1>Hello {name}!</h1>
 ```
+@snapend
 
 ---
 
@@ -1297,20 +1396,24 @@ https://stackblitz.com/
 @ul
 - Small clone of Mitigram with limited functionality
 - Written in React, Vue and Angular for comparison
-- User authentication with fake backend
+- User authentication with Redux fake backend
 - Semantic UI
-- Kendo UI (Charts, Modals and everyone's favorite - the Grid)
+- Kendo UI (Charts, Modals and everyone's favorite - "The Grid")
 - Routing
-- Redux for authentication
 @ulend
+@snapend
+
+
+---
+
+@snap[midpoint]
+# DEMO
 @snapend
 
 ---
 
-
-
 @snap[north]
-#### Component Testing (with Angular)
+#### Component Testing with Angular
 @snapend
 
 @snap[midpoint span-80 text-06]
@@ -1334,6 +1437,23 @@ https://stackblitz.com/
 - *HTML Imports*: Import/export reusable bits of HTML. Hardly anyone uses it.
 - *Custom Elements*: Ability to add to the vernacular of HTML, basically allows you to define a web component.
 @olend
+@snapend
+
+---
+
+@snap[north]
+#### Shadow DOM
+@snapend
+
+@snap[midpoint span-80 text-06]
+@ul
+- Shadow DOM removes the brittleness of building web apps
+- A DOM within a DOM
+- Introduces scoped styles to the web platform.
+- It is its own isolated DOM tree with its own elements and styles, completely isolated from the original DOM.
+- A component's DOM is self-contained (e.g. document.querySelector() won't return nodes in the component's shadow DOM).
+- F12 > F1 to open DevTools >> Settings >> Preferences >> "Show user agent shadow DOM"
+@ulend
 @snapend
 
 ---
@@ -1387,28 +1507,45 @@ ng add @angular/elements
 @snapend
 
 @snap[north]
-#### Conslusion
+#### Conclusion
+Library vs. framework
 @snapend
 
 @snap[west span-80 text-06]
-Using a library
 @ul
+- Only focus on doing one thing (eg. building the UI)
 - Higher level of freedom
 - Lower learning curve
-- Different code styles
-- Dependices are updated infrequently, may be abonondon and needs replacement
+- Include it on your page and run your code
+- Different coding styles
+- Different architecture - hard to move between projects
+- Esoteric bugs
+- Dependices may be updated infrequently or even abandoned and needs replacement
 @ulend
 @snapend
 
 @snap[east span-80 text-06]
 @ul
+- Comes with everything included - routing, forms, xhr and fetch, polyfills, ssr and much more
 - Higher lerning curve
-- Comes with everything included - routing, forms, xhr and fetch, polyfills 
+- Typically needs a compilation step before running
+- "One" coding style
+- Same architecture - easy to move between projects
 - Easy upgrades, even between major versions
+- Everything has been tested together
+- Rules save a lot of time and boost productivity
 @ulend
 @snapend
 
 @snap[south]
-https://www.reddit.com/r/vuejs/comments/dqulnv/vuejs_is_so_much_better_than_reactjs/
-https://medium.com/javascript-in-plain-english/why-you-should-learn-react-instead-of-angular-7d8b78e6522b
-https://blog.angularindepth.com/angular-and-react-together-with-ivy-5c77d1f48204
+
+---
+
+@snap[east span-80 text-06]
+*TL;DR* React and Vue has “freedom”. 
+Not so sure that is a great thing because not all devs are good at architecture. 
+There aren’t a lot of architecture decisions to be made with Angular.
+You can focus on building your app and keep you and your client happy. 
+@snapend
+
+---
