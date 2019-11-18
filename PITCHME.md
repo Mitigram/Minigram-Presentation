@@ -20,8 +20,8 @@
 - Virtual DOM, Incremental DOM and Redux
 - Minigram project - React, Vue, Angular
 - Feature comparison and discussion
-- Bringing Mitigram Web into the modern era
 - Web Components
+- Bringing Mitigram Web into the modern era
 @ulend
 @snapend
 
@@ -1426,11 +1426,42 @@ https://svelte.dev/
 @ulend
 @snapend
 
-
 ---
 
 @snap[midpoint]
 # DEMO
+@snapend
+
+---
+
+@snap[north]
+#### Library vs. framework
+@snapend
+
+@snap[west span-40 text-06]
+@ul
+- Only focus on doing one thing (eg. building the UI)
+- Higher level of freedom
+- Lower learning curve
+- Include it on your page and run your code
+- Different coding styles
+- Different architecture - hard to move between projects
+- Esoteric bugs
+- Dependices may be updated infrequently or even abandoned and needs replacement
+@ulend
+@snapend
+
+@snap[east span-40 text-06]
+@ul
+- Comes with everything included - routing, forms, xhr and fetch, polyfills, ssr and much more
+- Higher lerning curve
+- Typically needs a compilation step before running
+- "One" coding style
+- Same architecture - easy to move between projects
+- Easy upgrades, even between major versions
+- Everything has been tested together
+- Rules save a lot of time and boost productivity
+@ulend
 @snapend
 
 ---
@@ -1441,8 +1472,8 @@ https://svelte.dev/
 
 @snap[midpoint span-80 text-06]
 @ul
-- An isolated test that only focuses on the component’s class.
-- The shadow test that focuses on the component’s class and its template, without its dependencies by mocking them.
+- An *isolated* test that only focuses on the component’s class.
+- The *shadow test that focuses on the component’s class and its template, without its dependencies by mocking them.
 - An integrated test will test the component and its dependencies as a whole.
 @ulend
 @snapend
@@ -1541,35 +1572,20 @@ ng add @angular/elements
 @snapend
 
 ---
-
 @snap[north]
-
-#### Library vs. framework
+#### Bringing Mitigram Web into the modern era
 @snapend
 
-@snap[west span-40 text-06]
+@snap[midpoint span-80 text-06]
 @ul
-- Only focus on doing one thing (eg. building the UI)
-- Higher level of freedom
-- Lower learning curve
-- Include it on your page and run your code
-- Different coding styles
-- Different architecture - hard to move between projects
-- Esoteric bugs
-- Dependices may be updated infrequently or even abandoned and needs replacement
-@ulend
-@snapend
-
-@snap[east span-40 text-06]
-@ul
-- Comes with everything included - routing, forms, xhr and fetch, polyfills, ssr and much more
-- Higher lerning curve
-- Typically needs a compilation step before running
-- "One" coding style
-- Same architecture - easy to move between projects
-- Easy upgrades, even between major versions
-- Everything has been tested together
-- Rules save a lot of time and boost productivity
+- Remove server side variables
+- Extract all inline CSS and JS into seprated files
+- DetailsCorp.cshtml, DetailsCorp.less, DetailsCorp.ts
+- Separate concerns
+- Make it DRY
+- Web components
+- API 
+- https://jsonapi.org/
 @ulend
 @snapend
 
