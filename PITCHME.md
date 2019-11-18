@@ -1585,10 +1585,11 @@ ng add @angular/elements
 - Moduralize the coder, remove all global variables
 - Separate concerns
 - Make it DRY
-- Angular Elements
+- Use Angular Elements for new components and convert old ones.
 - Create an API 
 - https://jsonapi.org/
-- Bui
+- Build the surrounding app
+- Profit!
 @ulend
 @snapend
 
