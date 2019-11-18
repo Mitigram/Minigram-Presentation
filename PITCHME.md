@@ -1545,9 +1545,21 @@ attributeChangedCallback(oldvalue, newvalue, key) {}}
 
 @snap[midpoint span-80 text-06]
 Angular Elements are simply an Angular component, but packaged as a Web Component.
+
+```
+ng new angularElements
+```
+
+```
+ng add @angular/elements
+```
 @snapend
 
 ---
+
+@snap[north]
+#### Angular Elements Demo
+@snapend
 
 @snap[midpoint span-80 text-06]
 @ul
@@ -1561,31 +1573,22 @@ Angular Elements are simply an Angular component, but packaged as a Web Componen
 
 ---
 
-@snap[midpoint span-80 text-06]
-```
-ng new angularElements
-```
-
-```
-ng add @angular/elements
-```
-@snapend
-
----
 @snap[north]
 #### Bringing Mitigram Web into the modern era
 @snapend
 
 @snap[midpoint span-80 text-06]
 @ul
-- Remove server side variables
+- Remove server rendered variables
 - Extract all inline CSS and JS into seprated files
-- DetailsCorp.cshtml, DetailsCorp.less, DetailsCorp.ts
+- DetailsCorp.cshtml, DetailsCorp.less, DetailsCorp.(js/ts)
+- Moduralize the coder, remove all global variables
 - Separate concerns
 - Make it DRY
-- Web components
-- API 
+- Angular Elements
+- Create an API 
 - https://jsonapi.org/
+- Bui
 @ulend
 @snapend
 
