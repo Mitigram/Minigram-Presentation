@@ -327,20 +327,20 @@ This command will run the webpack tool that was installed in the _node_modules_ 
 ```
 ---
 
-@snap[north-east span-80]
+@snap[north-west span-80]
 ```
 $ ./node_modules/.bin/webpack index.js --mode=development
 ```
 @snapend
 
-@snap[east span-50 text-07]
+@snap[midpoint span-50 text-07]
 Note that we’ll need to run the webpack command each time we change _index.js_.
 This is tedious, and will get even more tedious as we use webpack’s more advanced features like generating source maps.
 @snapend
 
 ---
 
-@snap[north-east]
+@snap[north-west]
 ```JavaScript
 // webpack.config.js
 module.exports = {
@@ -354,7 +354,7 @@ module.exports = {
 ```
 @snapend
 
-@snap[east span-50 text-07]
+@snap[midpoint span-80]
 ```
 $ ./node_modules/.bin/webpack
 ```
@@ -1385,4 +1385,3 @@ Using a library
 https://www.reddit.com/r/vuejs/comments/dqulnv/vuejs_is_so_much_better_than_reactjs/
 https://medium.com/javascript-in-plain-english/why-you-should-learn-react-instead-of-angular-7d8b78e6522b
 https://blog.angularindepth.com/angular-and-react-together-with-ivy-5c77d1f48204
-@snapend
