@@ -1020,13 +1020,18 @@ $ ./node_modules/.bin/webpack
 
 ---
 
-@snap[north]
+---?color=linear-gradient(90deg, #5384AD 65%, white 35%)
+@title[Agenda]
+
+@snap[north-west h4-white]
+
 #### Modern frontend libraries and frameworks
+
 @snapend
 
-@snap[midpoint span-80 text-06]
-@ul
-- Single Page App / PWA
+@snap[west span-55]
+@ul[list-spaced-bullets text-white text-04]
+- Single Page App / PWA / Service Workers
 - webpack
 - CLI
 - Babel and TypeScript
@@ -1036,6 +1041,24 @@ $ ./node_modules/.bin/webpack
 - Redux
 - SSR - server-side rendering
 @ulend
+@snapend
+
+@snap[east span-45]
+@img[shadow](assets/img/pwa.png)
+@snapend
+
+---
+
+@snap[north]
+#### Service Worker
+@snapend
+
+@snap[midpoint span-60 text-06]
+
+Service workers are proxies that sit between the web page and the network, providing cached versions of the site when no network connectivity is available.
+
+![IMAGE](assets/img/service-worker-diagram.png)
+
 @snapend
 
 ---
@@ -1146,7 +1169,7 @@ A predictable state container for JavaScript apps.
 
 ---
 
-@snap[midpoint span-80 text-06]
+@snap[midpoint span-60 text-06]
 
 ![IMAGE](assets/img/new-redux-data-flow-large-opt.png)
 
@@ -1428,6 +1451,7 @@ https://svelte.dev/
 
 @snap[north]
 #### Web components
+https://www.webcomponents.org/
 @snapend
 
 @snap[midpoint span-80 text-06]
@@ -1454,6 +1478,16 @@ https://svelte.dev/
 - A component's DOM is self-contained (e.g. document.querySelector() won't return nodes in the component's shadow DOM).
 - F12 > F1 to open DevTools >> Settings >> Preferences >> "Show user agent shadow DOM"
 @ulend
+@snapend
+
+---
+
+@snap[north]
+#### Custom ELements
+@snapend
+
+@snap[midpoint span-80 text-06]
+Create new HTML tags, beef-up existing HTML tags, or extend the components other developers have authored
 @snapend
 
 ---
@@ -1506,12 +1540,14 @@ ng add @angular/elements
 ```
 @snapend
 
+---
+
 @snap[north]
-#### Conclusion
-Library vs. framework
+
+#### Library vs. framework
 @snapend
 
-@snap[west span-80 text-06]
+@snap[west span-40 text-06]
 @ul
 - Only focus on doing one thing (eg. building the UI)
 - Higher level of freedom
@@ -1524,7 +1560,7 @@ Library vs. framework
 @ulend
 @snapend
 
-@snap[east span-80 text-06]
+@snap[east span-40 text-06]
 @ul
 - Comes with everything included - routing, forms, xhr and fetch, polyfills, ssr and much more
 - Higher lerning curve
@@ -1535,17 +1571,6 @@ Library vs. framework
 - Everything has been tested together
 - Rules save a lot of time and boost productivity
 @ulend
-@snapend
-
-@snap[south]
-
----
-
-@snap[east span-80 text-06]
-*TL;DR* React and Vue has “freedom”. 
-Not so sure that is a great thing because not all devs are good at architecture. 
-There aren’t a lot of architecture decisions to be made with Angular.
-You can focus on building your app and keep you and your client happy. 
 @snapend
 
 ---
