@@ -1600,6 +1600,6 @@ ng add @angular/elements
 
 ---
 
-# Thank you!
+![IMAGE](assets/img/thankyou.jpg)
 
 ---
