@@ -197,14 +197,14 @@ The bad thing is right now we’re digging through the **node_modules** folder t
 ---
 
 @snap[north span-40]
-#### Using a JavaScript module bundler
-@snapend
+#### Using a JavaScript undler
+@snapendmodule b
 
 @snap[west span-40 text-08]
 Most programming languages, provide a way to import code from one file into another.
 @snapend
 
-@snap[east span-40 text-08]
+@snap[east span-40 text-07]
 
 ```csharp
 using App.Application.Contracts;
@@ -248,6 +248,7 @@ using TypeLess;
 
 ```JavaScript
 // index.js
+// require('./node_modules/moment/min/moment.min.js)
 var moment = require('moment');
 console.log("Hello from JavaScript!");
 console.log(moment().startOf('day').fromNow());
@@ -264,10 +265,11 @@ console.log(moment().startOf('day').fromNow());
 
 ---
 
-@snap[midpoint span-50 text-07]
+@snap[midpoint span-50 text-06]
 @ul
 - We need a module bundler to find all require statements and replace them with the actual contents of each required file.
-- Around 2015, **webpack** eventually became the more widely used module bundler.
+- Browserify - 2011 - http://browserify.org/
+- Around 2015, **webpack** eventually became the more widely used module bundler (and not just for JS) - https://webpack.js.org/
 - Fueled by the popularity of the **React** frontend framework, which took full advantage of webpack’s various features.
 @ulend
 @snapend
@@ -286,27 +288,28 @@ $ npm install webpack webpack-cli --save-dev
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "moment": "^2.19.1"
-  },
   "devDependencies": {
-    "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+  },
+  "dependencies": {
+    "moment": "^2.24.0"
   }
 }
 ```
 ---
 
-@snap[north span-80]
+@snap[north span-50 text-07]
+This command will run the webpack tool that was installed in the _node_modules_ folder start with the index.js file, find any require statements, and replace them with the appropriate code to create a single output file (which by default is _dist/main.js_).
+@snapend
+
+@snap[south span-80]
 ```
 $ ./node_modules/.bin/webpack index.js --mode=development
 ```
-@snapend
-
-@snap[midpoint span-50 text-07]
-This command will run the webpack tool that was installed in the _node_modules_ folder start with the index.js file, find any require statements, and replace them with the appropriate code to create a single output file (which by default is _dist/main.js_).
 @snapend
 
 ---
@@ -340,7 +343,7 @@ This is tedious, and will get even more tedious as we use webpack’s more advan
 
 ---
 
-@snap[midpoint]
+@snap[midpoint span-80]
 ```JavaScript
 // webpack.config.js
 module.exports = {
@@ -368,7 +371,7 @@ $ ./node_modules/.bin/webpack
 @ul
 - We are no longer loading external scripts via global variables (yay!)
 - Any new JavaScript libraries will be added using require statements in the JavaScript
-- Having a single JavaScript bundle file is often better for performance.
+- Having a single JavaScript bundle file is often better for performance (fewer network requests).
 - And now that we added a build step, there are some other powerful features we can add to our development workflow!
 - Transpiling code for new language features - ES6 and beyond!
 @ulend
@@ -389,7 +392,7 @@ $ ./node_modules/.bin/webpack
 | 4   | ECMAScript 4          | Never released.                                                                                                     |     |     |
 | 5   | ECMAScript 5 (2009)   | Added "strict mode". Added JSON support. Added String.trim(). Added Array.isArray(). Added Array Iteration Methods. |     |     |
 | 5.1 | ECMAScript 5.1 (2011) | Editorial changes.                                                                                                  |     |     |
-| 6   | ECMAScript 2015       | Added let and const. Added default parameter values. Added Array.find(). Added Array.findIndex().                   |     |     |
+| 6   | ECMAScript 2015       | Added let and const. Added default parameter values. Added Array.find(). Added Array.findIndex(). Modules. Classes.                  |     |     |
 | 7   | ECMAScript 2016       | Added exponential operator (\*\*). Added Array.prototype.includes.                                                  |     |     |
 | 8   | ECMAScript 2017       | Added string padding. Added new Object properties. Added Async functions. Added Shared Memory.                      |     |     |
 | 9   | ECMAScript 2018       | Added rest / spread properties. Added Asynchronous iteration. Added Promise.finally(). Additions to RegExp.         |     |     |
@@ -915,9 +918,8 @@ npm install -g typescript
 $ npm install --save-dev typescript ts-loader source-map-loader
 ```
 
-*tsconfig.json*
-
 ```JSON
+// tsconfig.json
 {
     "compilerOptions": {
         "outDir": "./dist/",
@@ -1025,7 +1027,7 @@ $ ./node_modules/.bin/webpack
 
 @snap[north-west h4-white]
 
-#### Modern frontend libraries and frameworks
+#### Modern libraries
 
 @snapend
 
@@ -1108,7 +1110,7 @@ Service workers are proxies that sit between the web page and the network, provi
 
 @snap[midpoint span-80 text-06]
 @ul
-- Svelte and Angular 9
+- Angular 9 and Svelte  
 - Every component gets compiled into a series of instructions. These instructions create DOM trees and update them in-place when the data changes.
 - Virtual DOM requires an interpreter. What part of that interpreter is needed and what part is not isn’t known at compile time, so we have to ship the whole thing to the browser.
 - Applications have to perform well on mobile devices. This mainly meant optimizing two things: the bundle size and the memory footprint.
@@ -1157,9 +1159,8 @@ function renderDady() {
 
 @snap[midpoint span-80 text-06]
 
-A predictable state container for JavaScript apps.
-
 @ul
+- A predictable state container for JavaScript apps.
 - Redux maintains the state of an entire application in a single immutable state tree (object), which can’t be changed directly.
 - It operates in a similar fashion to a reducing function.
 - When something changes, a new object is created (using actions and reducers).
@@ -1266,7 +1267,6 @@ store.dispatch(authUser(authInfo));
 A JavaScript library for building user interfaces developed and maintained by Facebook.
 https://reactjs.org/
 
-JSX + JS (ES5/ES6)
 @ul
 - Virtual DOM
 - Unidirectionl binding / one way data flow e.g. Redux
@@ -1322,6 +1322,8 @@ http://vuejs.org
 
 ---
 
+@snap[midpoint span-80 text-06]
+
 ```HTML
 <div id="app">
   {{ message }}
@@ -1337,6 +1339,8 @@ var app = new Vue({
 })
 ```
 
+@snapend
+
 ---
 
 @snap[north]
@@ -1346,6 +1350,7 @@ var app = new Vue({
 @snap[midpoint span-80 text-06]
 Angular is a fully-fledged MVC framework written in TypeScript
 https://angular.io/
+https://stackblitz.com/
 
 @ul
 - Two-way databinding
@@ -1364,6 +1369,8 @@ https://angular.io/
 @snapend
 
 ---
+
+@snap[midpoint span-80 text-06]
 
 ```HTML
 <div id="app">
@@ -1384,9 +1391,7 @@ export class HelloComponent  {
 }
 ```
 
-```
-https://stackblitz.com/
-```
+@snapend
 
 ---
 
@@ -1467,7 +1472,7 @@ https://svelte.dev/
 ---
 
 @snap[north]
-#### Component Testing with Angular
+#### Bonus: Component Testing with Angular
 @snapend
 
 @snap[midpoint span-80 text-06]
@@ -1514,7 +1519,7 @@ https://www.webcomponents.org/
 ---
 
 @snap[north]
-#### Custom ELements
+#### Custom Elements
 @snapend
 
 @snap[midpoint span-80 text-06]
@@ -1592,5 +1597,9 @@ ng add @angular/elements
 - Profit!
 @ulend
 @snapend
+
+---
+
+# Thank you!
 
 ---
