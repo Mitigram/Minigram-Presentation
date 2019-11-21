@@ -13,6 +13,6 @@ export class ElementsButtonComponent {
   @Output() clicked = new EventEmitter<string>();
 
   buttonClicked() {
-    this.clicked.emit('Button clicked at ' + new Date().toTimeString());
+    this.clicked.emit(`${this.displayText} clicked at ${new Date().toTimeString()}`);
   }
 }
