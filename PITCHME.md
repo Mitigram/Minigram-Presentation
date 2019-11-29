@@ -1478,8 +1478,8 @@ https://svelte.dev/
 @snap[midpoint span-80 text-06]
 @ul
 - An *isolated* test that only focuses on the component’s class.
-- The *shadow test that focuses on the component’s class and its template, without its dependencies by mocking them.
-- An integrated test will test the component and its dependencies as a whole.
+- The *shadow* test that focuses on the component’s class and its template, without its dependencies by mocking them.
+- An *integrated* test will test the component and its dependencies as a whole.
 @ulend
 @snapend
 
